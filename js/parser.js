@@ -34,14 +34,18 @@ const VERB_SYNONYMS = {
 };
 
 const DIRECTION_MAP = {
-    north: 'north', n: 'north', up: 'north',
-    south: 'south', s: 'south', down: 'south',
+    north: 'north', n: 'north',
+    south: 'south', s: 'south',
     east: 'east', e: 'east', right: 'east',
     west: 'west', w: 'west', left: 'west',
-    upstairs: 'upstairs', ascend: 'upstairs', climb: 'upstairs',
-    downstairs: 'downstairs', descend: 'downstairs',
+    up: 'up', upstairs: 'up', ascend: 'up', climb: 'up',
+    down: 'down', downstairs: 'down', descend: 'down',
     inside: 'inside', in: 'inside',
-    outside: 'outside', out: 'outside'
+    outside: 'outside', out: 'outside',
+    northeast: 'northeast', ne: 'northeast',
+    northwest: 'northwest', nw: 'northwest',
+    southeast: 'southeast', se: 'southeast',
+    southwest: 'southwest', sw: 'southwest'
 };
 
 const SHORTCUT_COMMANDS = {
@@ -49,8 +53,8 @@ const SHORTCUT_COMMANDS = {
     's': { verb: 'go', noun: 'south' },
     'e': { verb: 'go', noun: 'east' },
     'w': { verb: 'go', noun: 'west' },
-    'u': { verb: 'go', noun: 'upstairs' },
-    'd': { verb: 'go', noun: 'downstairs' },
+    'u': { verb: 'go', noun: 'up' },
+    'd': { verb: 'go', noun: 'down' },
     'i': { verb: 'inventory', noun: null },
     'l': { verb: 'look', noun: null },
     'h': { verb: 'help', noun: null },
@@ -201,13 +205,16 @@ const Parser = {
 
     resolveLocationName(name, context) {
         if (!context.availableExits) return null;
-        const lower = name.toLowerCase();
+        const lower = name.toLowerCase().replace(/\s+/g, '');
 
         for (const [dir, exit] of Object.entries(context.availableExits)) {
-            if (dir === lower) return dir;
-            if (exit.roomId && exit.roomId.toLowerCase() === lower) return dir;
+            // Exact match on exit key (with spaces collapsed)
+            if (dir.toLowerCase() === lower) return dir;
+            // Match on room ID
+            if (exit.roomId && exit.roomId.toLowerCase().replace(/\s+/g, '') === lower) return dir;
+            // Match on description
             const desc = (exit.description || '').toLowerCase();
-            if (desc.includes(lower) || lower.includes(desc)) return dir;
+            if (desc.includes(name.toLowerCase()) || name.toLowerCase().includes(desc)) return dir;
         }
         return null;
     },

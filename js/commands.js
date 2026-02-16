@@ -22,10 +22,26 @@ const Commands = {
     handlers: {
         // ---- MOVEMENT ----
         go(parsed, gameState, engine) {
-            const dir = parsed.noun;
-            if (!dir) return { messages: ['Go where? Specify a direction (north, south, east, west, upstairs, downstairs).'] };
+            let dir = parsed.noun;
+            if (!dir) return { messages: ['Go where? Specify a direction (n, s, e, w, up, down) or an exit name.'] };
 
-            const result = World.canMove(gameState.player.location, dir);
+            // Try direct match first
+            let result = World.canMove(gameState.player.location, dir);
+
+            // If no exit found, try fuzzy matching against available exit keys
+            if (!result.can && !result.locked) {
+                const exits = World.getRoomExits(gameState.player.location);
+                const dirClean = dir.toLowerCase().replace(/\s+/g, '');
+                for (const [exitKey, exitData] of Object.entries(exits)) {
+                    if (exitKey.toLowerCase() === dirClean ||
+                        (exitData.roomId && exitData.roomId.toLowerCase().replace(/[_\s]+/g, '').includes(dirClean))) {
+                        dir = exitKey;
+                        result = World.canMove(gameState.player.location, dir);
+                        break;
+                    }
+                }
+            }
+
             if (!result.can) {
                 // Try to unlock with key in inventory
                 if (result.locked && result.lockRequires) {
