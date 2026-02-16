@@ -2,6 +2,8 @@
 
 A post-apocalyptic text adventure game set in the ruins of Paris.
 
+**[Play it now](https://dead-paris.vercel.app/)**
+
 You wake up in Room 302 of Le Meurice, one of the most expensive hotels in Paris. The world outside the window has ended. Dozens of figures stumble through the Tuileries Garden. The fountains are red.
 
 Paris has fallen. And you are alone.
@@ -10,7 +12,7 @@ Paris has fallen. And you are alone.
 
 Dead Paris is a browser-based survival text adventure with an 80s retro terminal aesthetic. Explore the hotel, scavenge for supplies, fight the undead, meet other survivors, and find one of four escape routes out of the city.
 
-**No installation required** — just open `index.html` in a browser via a local server.
+**No installation required** — play instantly at [dead-paris.vercel.app](https://dead-paris.vercel.app/) or host your own copy.
 
 ## Features
 
@@ -26,14 +28,7 @@ Dead Paris is a browser-based survival text adventure with an 80s retro terminal
 
 ## How to Play
 
-### Quick Start
-
-1. Start a local HTTP server in the project directory:
-   ```
-   python -m http.server 8080
-   ```
-2. Open `http://localhost:8080` in your browser
-3. Click **BEGIN** and start typing commands
+Type commands to explore, survive, and escape. Click **BEGIN** and start typing.
 
 ### Commands
 
@@ -106,6 +101,48 @@ dead-paris/
     ascii-art.json    — ASCII art for locations
     help.json         — In-game help text
 ```
+
+## Host Your Own Copy
+
+Dead Paris is a fully static site — no server-side code, no build step, no dependencies. You can deploy it for free on any static hosting provider.
+
+### Vercel (Recommended)
+
+1. Fork this repository on GitHub
+2. Go to [vercel.com](https://vercel.com) and sign up (free) with your GitHub account
+3. Click **Add New Project** and import your forked repo
+4. Leave all settings as default — Vercel will auto-detect it as a static site
+5. Click **Deploy**
+
+Your game will be live in seconds with a `.vercel.app` URL.
+
+### Netlify
+
+1. Fork this repository on GitHub
+2. Go to [netlify.com](https://www.netlify.com) and sign up (free) with your GitHub account
+3. Click **Add new site** > **Import an existing project**
+4. Select your forked repo, leave all build settings blank
+5. Click **Deploy site**
+
+### GitHub Pages
+
+1. Fork this repository on GitHub
+2. Go to your fork's **Settings** > **Pages**
+3. Under **Source**, select **Deploy from a branch**
+4. Select the `master` branch and `/ (root)` folder
+5. Click **Save** — your game will be live at `https://yourusername.github.io/dead-paris/`
+
+### Run Locally
+
+If you prefer to run it on your own machine:
+
+```
+git clone https://github.com/QuadMonkey/dead-paris.git
+cd dead-paris
+python -m http.server 8080
+```
+
+Then open `http://localhost:8080` in your browser.
 
 ## License
 
