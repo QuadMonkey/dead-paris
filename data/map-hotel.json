@@ -1,0 +1,546 @@
+[
+  {
+    "id": "hotel_lobby",
+    "name": "Grand Lobby",
+    "zone": "hotel",
+    "floor": 0,
+    "description": {
+      "default": "The once-magnificent lobby of Le Meurice stretches before you, a cathedral of marble and gilt brought low by catastrophe. The massive crystal chandelier hangs at a grotesque angle, half its chains snapped, casting fractured light across overturned Louis XVI furniture and dark stains soaked deep into priceless Aubusson carpets. The smell of old blood and dust mingles with a faint ghost of expensive perfume. Through the shattered revolving door, Rue de Rivoli lies silent save for the distant shuffle of feet that no longer belong to the living.",
+      "firstVisit": "You emerge into what was once the most opulent lobby in Paris. Your footsteps echo off veined marble floors as your eyes adjust to the gloom. An overturned concierge cart has spilled luggage across the floor, and someone has dragged a heavy oak desk across the main entrance in a desperate barricade. The chandelier sways almost imperceptibly, and you cannot tell if it is the wind or something moving above you.",
+      "night": "The lobby is a cavern of deep shadows. The half-fallen chandelier catches slivers of moonlight through the cracked glass facade, throwing shifting patterns across bloodstained marble. Every creak of settling wood sounds like approaching footsteps. The barricade at the main entrance groans against something pressing from outside, and you can hear wet, rasping breathing through the gaps.",
+      "searched": "The lobby has been thoroughly picked over. Overturned furniture reveals nothing new, and the dark stains on the carpet seem to watch you like hollow eyes."
+    },
+    "exits": {
+      "north": {
+        "roomId": "hotel_reception",
+        "description": "The front reception desk, its marble counter chipped and streaked with something dark.",
+        "locked": false
+      },
+      "east": {
+        "roomId": "restaurant_dali",
+        "description": "Ornate double doors lead to the Restaurant Le Dali, one hanging off its hinges.",
+        "locked": false
+      },
+      "west": {
+        "roomId": "bar_228",
+        "description": "A heavy wooden door marked with a brass '228' leads to the hotel bar.",
+        "locked": false
+      },
+      "south": {
+        "roomId": "rue_de_rivoli",
+        "description": "The main entrance to Rue de Rivoli, barricaded with heavy furniture and wrapped in chain. You could force it open with a crowbar.",
+        "locked": true,
+        "lockRequires": "crowbar"
+      },
+      "northeast": {
+        "roomId": "corridor_ground",
+        "description": "A long gilded corridor stretches into the depths of the hotel.",
+        "locked": false
+      }
+    },
+    "items": ["hotel_map", "flashlight"],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.15,
+      "types": ["shambler"],
+      "maxCount": 1
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "dim",
+    "notes": null
+  },
+  {
+    "id": "hotel_reception",
+    "name": "Front Reception",
+    "zone": "hotel",
+    "floor": 0,
+    "description": {
+      "default": "Behind the elegant front desk, the reception area is a snapshot of interrupted civilization. The mahogany key rack still holds a handful of brass room keys on silk tassels, though most slots hang empty. A leather-bound guest ledger lies open on the counter, its last entry dated three weeks ago. Computer monitors have toppled from the desk, and a dried pool of coffee has stained a stack of welcome cards bearing the Le Meurice crest.",
+      "firstVisit": "You step behind the grand reception counter and feel a strange intimacy, like trespassing in someone's home. The guest ledger's final entries grow increasingly frantic -- complaints about 'sick guests' give way to a single scrawled line: 'They are in the hallways. God help us.' A few room keys still dangle from the ornate brass rack on the wall.",
+      "night": "The reception desk looms in the darkness like a wooden barricade. The brass key rack catches faint light, each remaining key a dull golden glint like an animal's eye. The guest ledger's pages flutter in a draft you cannot find the source of, and the dead computer screens reflect your silhouette back at you, distorted and wrong.",
+      "searched": "The reception area has been ransacked. Drawers hang open, the key rack has been mostly stripped, and the guest ledger lies splayed on the floor."
+    },
+    "exits": {
+      "south": {
+        "roomId": "hotel_lobby",
+        "description": "Back out to the grand lobby.",
+        "locked": false
+      }
+    },
+    "items": ["room_key_302", "first_aid_kit"],
+    "searchItems": ["room_key_605"],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.05,
+      "types": ["shambler"],
+      "maxCount": 1
+    },
+    "barricadeable": true,
+    "barricaded": false,
+    "lightLevel": "dim",
+    "notes": null
+  },
+  {
+    "id": "restaurant_dali",
+    "name": "Restaurant Le Dali",
+    "zone": "hotel",
+    "floor": 0,
+    "description": {
+      "default": "The surrealist dining room designed by Philippe Starck is a fever dream even before the apocalypse. The massive painted ceiling -- a riot of boots, hats, and distorted Parisian icons -- gazes down upon toppled dining chairs and tablecloths stiff with dried food and darker substances. Melted candles have fused to silver candelabras, and the air carries the sour tang of spoiled wine and rotting charcuterie. A grand piano in the corner has had its lid smashed in, its strings exposed like the ribs of some great beast.",
+      "firstVisit": "You push through the hanging door into a dining room that feels like stepping inside a painting. The enormous ceiling mural -- Starck's playful homage to Parisian life -- seems grotesque now, its oversized boots and whimsical figures presiding over a room of carnage. Tables for two still hold place settings for meals that were never finished. A half-eaten steak sits grey and petrified beside a shattered wine glass.",
+      "night": "The painted ceiling vanishes into total darkness above, leaving you surrounded by the ghostly outlines of overturned chairs and tables. Silverware catches your light in brief cold flashes. The smell of decay is stronger at night, as if the darkness feeds it. Something drips in the far corner with metronomic regularity, and you try not to think about what it might be.",
+      "searched": "The restaurant has been stripped of anything obviously useful. The painted ceiling still watches from above, indifferent to the ruin below."
+    },
+    "exits": {
+      "west": {
+        "roomId": "hotel_lobby",
+        "description": "Back through the ornate double doors to the lobby.",
+        "locked": false
+      },
+      "north": {
+        "roomId": "hotel_kitchen",
+        "description": "Swinging steel doors lead to the industrial kitchen, still faintly humming.",
+        "locked": false
+      }
+    },
+    "items": ["canned_food", "canned_food", "steak_knife"],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.2,
+      "types": ["shambler", "crawler"],
+      "maxCount": 2
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "dim",
+    "notes": null
+  },
+  {
+    "id": "hotel_kitchen",
+    "name": "Hotel Kitchen",
+    "zone": "hotel",
+    "floor": 0,
+    "description": {
+      "default": "The vast industrial kitchen stretches back in rows of stainless steel counters and hanging copper pots, still gleaming under emergency lighting. A walk-in refrigerator hums stubbornly on backup generator power, its door slightly ajar and leaking cold mist across the tiled floor. The smell of bleach and old grease hangs heavy. Knife racks line the walls, mostly emptied -- someone armed themselves in a hurry. A rat scurries across the central prep island and vanishes behind a stack of catering trays.",
+      "firstVisit": "The kitchen doors swing open to reveal a stainless steel labyrinth. Emergency strip lighting casts everything in a harsh white glow, and the walk-in fridge at the far end hums with mechanical persistence, its compressor cycling on and off like labored breathing. You spot scattered canned goods on shelves and realize this might be the most valuable room in the hotel. Then you notice the bloody drag marks leading from the pantry to the service elevator.",
+      "night": "The kitchen's emergency lights have dimmed to a sickly amber glow. The stainless steel surfaces reflect distorted shadows, and the walk-in fridge's compressor cycles with a shuddering groan that sounds almost human. Rats are bolder in the dark -- you can hear them everywhere, skittering through pots and gnawing at things you'd rather not identify.",
+      "searched": "The kitchen has been thoroughly raided. Cabinets hang open, shelves are bare, and the walk-in fridge door stands wide, its contents long since claimed."
+    },
+    "exits": {
+      "south": {
+        "roomId": "restaurant_dali",
+        "description": "The swinging doors back to Restaurant Le Dali.",
+        "locked": false
+      },
+      "down": {
+        "roomId": "wine_cellar",
+        "description": "A narrow stone staircase descends to the wine cellar, cold air rising from below.",
+        "locked": false
+      }
+    },
+    "items": ["kitchen_knife", "canned_food", "canned_food", "canned_food", "bottled_water", "bottled_water", "frying_pan"],
+    "searchItems": ["matches", "rubber_hose"],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.1,
+      "types": ["shambler"],
+      "maxCount": 1
+    },
+    "barricadeable": true,
+    "barricaded": false,
+    "lightLevel": "bright",
+    "notes": null
+  },
+  {
+    "id": "bar_228",
+    "name": "Bar 228",
+    "zone": "hotel",
+    "floor": 0,
+    "description": {
+      "default": "Bar 228, once the watering hole of Parisian literati and fashion elites, is a wreck of dark mahogany and shattered crystal. The long bar top is gouged and stained, bottles smashed behind it in a cascade of glass and dried liquor. Deep leather armchairs have been slashed open, their horsehair stuffing pulled out in ragged clumps. The air is thick with the reek of spilled spirits, so strong it burns your nostrils. Gilt-framed mirrors along the back wall are cracked into spider webs, multiplying your reflection into a dozen fractured versions of yourself.",
+      "firstVisit": "You push open the heavy door marked '228' and the overwhelming smell of alcohol hits you like a wall. Someone -- or something -- has torn this place apart with desperate violence. The celebrated bar where Hemingway once drank is now ankle-deep in broken glass and pooled bourbon. A leather armchair near the window has been arranged to face the door, a makeshift barricade of bar stools around it. Whoever sat there last left in a hurry, or didn't leave at all.",
+      "night": "Bar 228 is pitch black save for the amber glint of unbroken bottles catching your light. The cracked mirrors create the unnerving illusion of movement at the edges of your vision. Broken glass crunches underfoot no matter how carefully you step, and the concentrated fumes of spilled spirits make your head swim. In the deepest corner, something rustles in the gutted armchairs.",
+      "searched": "The bar has been picked clean. Broken glass covers every surface, and the remaining bottles hold nothing of value."
+    },
+    "exits": {
+      "east": {
+        "roomId": "hotel_lobby",
+        "description": "Back out to the lobby through the heavy wooden door.",
+        "locked": false
+      }
+    },
+    "items": ["whiskey_bottle", "bottled_water", "glass_shard"],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.15,
+      "types": ["shambler"],
+      "maxCount": 1
+    },
+    "barricadeable": true,
+    "barricaded": false,
+    "lightLevel": "dark",
+    "notes": null
+  },
+  {
+    "id": "corridor_ground",
+    "name": "Ground Floor Corridor",
+    "zone": "hotel",
+    "floor": 0,
+    "description": {
+      "default": "A long corridor stretches before you, lined with gilded wainscoting and faded damask wallpaper depicting pastoral scenes now spotted with mold and darker stains. Crystal wall sconces hang dark and dead at regular intervals. The carpet -- once a deep Meurice blue -- squelches underfoot in places you'd rather not investigate. To the left, the elevator doors stand pried half-open, revealing a black shaft that exhales stale air. Ahead, the grand marble staircase spirals upward into shadow.",
+      "firstVisit": "The corridor beyond the lobby reveals the true scale of Le Meurice. It stretches nearly the length of the building, a tunnel of faded luxury. Your footsteps are swallowed by the damp carpet. The elevator is dead, its doors forced apart by someone who either escaped up or fell down -- a shoe lies at the threshold, pointing into the abyss. The marble staircase at the far end offers the only way to the upper floors.",
+      "night": "The corridor is a tunnel of absolute darkness. Your light catches the gilded frames and crystal sconces, each one flaring briefly before the blackness swallows them again. The squelch of the carpet beneath your feet is the loudest sound in the world. The open elevator shaft breathes cold air across your neck as you pass, and from somewhere far above in the stairwell, you hear a sound like someone dragging furniture.",
+      "searched": "The corridor offers nothing new. Its length feels even more oppressive the second time, every shadow a familiar threat."
+    },
+    "exits": {
+      "southwest": {
+        "roomId": "hotel_lobby",
+        "description": "Back toward the grand lobby.",
+        "locked": false
+      },
+      "east": {
+        "roomId": "salon_pompadour",
+        "description": "Tall double doors open into the Salon Pompadour, the hotel's grand ballroom.",
+        "locked": false
+      },
+      "up": {
+        "roomId": "stairwell",
+        "description": "The grand marble staircase spirals upward, its iron banister cold to the touch.",
+        "locked": false
+      }
+    },
+    "items": [],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.25,
+      "types": ["shambler", "crawler"],
+      "maxCount": 2
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "dark",
+    "notes": null
+  },
+  {
+    "id": "salon_pompadour",
+    "name": "Salon Pompadour",
+    "zone": "hotel",
+    "floor": 0,
+    "description": {
+      "default": "The Salon Pompadour opens up like a gilded cavern -- a ballroom built for five hundred now holding only ghosts. Massive crystal chandeliers hang from a ceiling painted with clouds and cherubs, their facets dusty and still. The tall windows along the west wall have been boarded from inside with splintered furniture and wooden planks, thin blades of grey daylight cutting through the gaps. The parquet floor is scuffed and stained, and a makeshift sleeping area of mattresses and blankets occupies the center, long since abandoned.",
+      "firstVisit": "The ballroom takes your breath away despite everything. The Salon Pompadour was where Le Meurice hosted its legendary galas, and even in ruin it retains a terrible grandeur. Someone tried to make a stand here -- the windows are boarded, mattresses dragged in for a camp, and the remnants of a cooking fire scar the priceless parquet. But the camp is empty. Bloodied bandages and a child's stuffed rabbit lie among the blankets. The boards over the windows look solid. This could be fortified.",
+      "night": "The Salon Pompadour is vast enough that your light cannot reach the far walls. The chandeliers are dim constellations overhead, and the boarded windows creak and groan as something outside tests them with mindless persistence. The abandoned camp in the center of the room looks like a crime scene in your flashlight beam. You can hear the shuffling outside, the press of dead weight against wood and nails.",
+      "searched": "The salon has been searched. The abandoned camp yielded nothing new, and the boarded windows still hold, for now."
+    },
+    "exits": {
+      "west": {
+        "roomId": "corridor_ground",
+        "description": "Back into the ground floor corridor.",
+        "locked": false
+      }
+    },
+    "items": ["wooden_plank", "wooden_plank"],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.2,
+      "types": ["shambler"],
+      "maxCount": 2
+    },
+    "barricadeable": true,
+    "barricaded": false,
+    "lightLevel": "dim",
+    "notes": null
+  },
+  {
+    "id": "wine_cellar",
+    "name": "Wine Cellar",
+    "zone": "hotel",
+    "floor": -1,
+    "description": {
+      "default": "The stone-walled wine cellar extends beneath Le Meurice in vaulted alcoves, the air thick with the mineral smell of damp limestone and old oak. Floor-to-ceiling wine racks stretch into the gloom, most bottles still nestled in their slots, labels too mold-spotted to read. Water seeps through the ancient mortar, pooling on the uneven flagstone floor. In the far wall, a rusted iron grate covers a passage that exhales the unmistakable sewage stench of the Paris underground. Rats watch you from the shadows with bright, unafraid eyes.",
+      "firstVisit": "The narrow staircase deposits you into a different world -- the medieval bones beneath Le Meurice's Belle Epoque skin. The cellar is older than the hotel, its rough stone walls possibly dating to the ancien regime. Thousands of bottles line the racks, a fortune in vintages that no longer matter. The cold down here is different from above, a deep geological chill that settles in your marrow. Against the far wall, an iron grate covers a low passage. The smell coming through it is unmistakable: the Paris sewers. If you could get through, you'd have access to the tunnels beneath the city.",
+      "night": "The wine cellar knows no day or night, but the darkness feels thicker after sundown, as if the weight of the building above is pressing it denser. Your light barely penetrates the vaulted alcoves, and the rats grow bold enough to cross your path. The iron grate in the far wall rattles occasionally, moved by some pressure or presence from the tunnels beyond. Water drips with the rhythm of a slow heartbeat.",
+      "searched": "The cellar has been searched. Wine racks stand depleted in places, and the flagstone floor is scuffed with your footprints."
+    },
+    "exits": {
+      "up": {
+        "roomId": "hotel_kitchen",
+        "description": "The narrow stone staircase back up to the kitchen.",
+        "locked": false
+      },
+      "north": {
+        "roomId": "sewer_entrance",
+        "description": "A rusted iron grate set into the wall, leading to the Paris sewer system. The bolts are corroded but could be forced with the right tool.",
+        "locked": true,
+        "lockRequires": "crowbar"
+      }
+    },
+    "items": ["wine_bottle", "wine_bottle", "crowbar"],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.1,
+      "types": ["crawler"],
+      "maxCount": 1
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "dark",
+    "notes": "An old leather-bound wine log lies open on a tasting table. The final entry, in spidery handwriting, reads: 'The tunnels beneath connect to the Tuileries station and beyond. During the war, the Resistance used them. Perhaps they will serve again. God willing, the dead do not know these paths.'"
+  },
+  {
+    "id": "stairwell",
+    "name": "Grand Stairwell",
+    "zone": "hotel",
+    "floor": 0,
+    "description": {
+      "default": "The grand marble staircase of Le Meurice spirals upward through the core of the building, seven floors of wrought-iron banisters and veined Carrara marble steps worn smooth by two centuries of guests. Emergency lighting casts a sickly green pall from battery units on each landing. The acoustics are merciless -- every footstep, every breath echoes up and down the shaft, making it impossible to tell if the sounds you hear are your own or belong to something else. Dark stains mark several landings, and a woman's high-heeled shoe sits alone on the third step.",
+      "firstVisit": "You stand at the base of Le Meurice's legendary staircase, a spiral of marble and iron that once carried kings and film stars to their suites. Now it is a vertical gauntlet. The emergency lights give just enough illumination to see the next landing, each one a pool of green light separated by stretches of shadow. Sound behaves strangely here -- a cough from above might be three floors up or right around the next turn. You'll need to move carefully. The stairs connect the ground floor to the upper levels and the roof.",
+      "night": "The stairwell is a throat of darkness. The emergency lights have faded to the faintest green glow, barely enough to distinguish the edge of each marble step from the void. Every sound you make cascades up and down the shaft in diminishing echoes, and sounds cascade back -- shuffling, scraping, the wet slap of something descending. You cannot see more than one flight in any direction. Going up or down is an act of faith.",
+      "searched": "The stairwell is as barren as before. Marble and iron, echoes and shadows. There was never anything here but passage."
+    },
+    "exits": {
+      "down": {
+        "roomId": "corridor_ground",
+        "description": "Down to the ground floor corridor.",
+        "locked": false
+      },
+      "floor3": {
+        "roomId": "floor_3_hallway",
+        "description": "The third floor landing, marked by a tarnished brass '3' on the wall.",
+        "locked": false
+      },
+      "floor6": {
+        "roomId": "floor_6_hallway",
+        "description": "The sixth floor landing, where the ceiling lowers beneath the mansard roof.",
+        "locked": false
+      },
+      "up": {
+        "roomId": "rooftop_access",
+        "description": "The stairs narrow and turn utilitarian past the sixth floor, leading to a service door marked 'TOIT - ACCES RESTREINT'.",
+        "locked": false
+      }
+    },
+    "items": [],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.3,
+      "types": ["shambler", "crawler"],
+      "maxCount": 2
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "dim",
+    "notes": null
+  },
+  {
+    "id": "floor_3_hallway",
+    "name": "Third Floor Hallway",
+    "zone": "hotel",
+    "floor": 3,
+    "description": {
+      "default": "The third floor hallway stretches in both directions, its sage-green carpet muffling your steps. Numbered doors line the walls at regular intervals, each one a study in understated luxury -- brass numbers, ivory paint, ornate moulding. Most are closed and locked. A vending machine at the hallway's midpoint still glows faintly, its fluorescent tube flickering with dying persistence. A housekeeping cart has been overturned near room 310, towels and tiny shampoo bottles scattered across the floor.",
+      "firstVisit": "You step out onto the third floor and are struck by how normal it looks compared to the carnage below. The hallway could almost be undisturbed -- doors closed, carpet clean, wall sconces dark but intact. Then you notice the details: scratch marks on several doors, gouged from the outside. A smear of something dark at ankle height along the baseboard, as if someone crawled the length of the hall. The vending machine hums and flickers, its selection of energy bars and sodas absurdly cheerful behind the glass.",
+      "night": "The third floor hallway is a corridor of closed doors and deeper darkness. The vending machine provides the only light, its dying fluorescent tube casting a strobing blue-white glow that makes shadows jump and dance. The scratch marks on the doors look fresher in this light, more desperate. Behind one of the locked doors, you hear a faint, rhythmic thumping. It could be a shutter in the wind. It could be something trying to get out.",
+      "searched": "The hallway has been searched. The vending machine stands empty and dark, and the overturned cart holds nothing of use."
+    },
+    "exits": {
+      "west": {
+        "roomId": "stairwell",
+        "description": "The stairwell landing, green emergency light spilling through the fire door.",
+        "locked": false
+      },
+      "north": {
+        "roomId": "room_302",
+        "description": "Room 302, its door slightly ajar. This is where you woke up.",
+        "locked": false
+      }
+    },
+    "items": ["energy_bar", "soda_can"],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.15,
+      "types": ["shambler"],
+      "maxCount": 1
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "dim",
+    "notes": null
+  },
+  {
+    "id": "room_302",
+    "name": "Room 302",
+    "zone": "hotel",
+    "floor": 3,
+    "description": {
+      "default": "Room 302 is a luxury guest room frozen in the moment between civilization and collapse. A king-sized bed with rumpled silk sheets dominates the space, flanked by mahogany nightstands. The marble-clad bathroom door stands open, revealing a clawfoot tub and gold fixtures. Heavy brocade curtains are half-drawn across a tall window overlooking the Tuileries Garden, where figures shamble between the bare chestnut trees in aimless, horrible patterns. Your backpack sits on the bed where you left it. The minibar hums softly in the corner.",
+      "firstVisit": "You wake with a splitting headache in an absurdly soft bed, silk sheets tangled around your legs. For a disoriented moment you think you're hungover in a hotel room -- and you are, in a way, though the hangover is from a head wound you don't remember getting, and the hotel is Le Meurice, and the world outside the window has ended.\n\nYou sit up. The room is luxurious, untouched: marble bathroom, mahogany furniture, a minibar still humming. Your backpack is on the bed. You have no memory of checking in.\n\nThen you look out the window. The Tuileries Garden stretches below, and in the grey morning light, you see them. Dozens of figures moving between the trees with a terrible, wrong gait. Some drag limbs. Some have no limbs to drag.",
+      "night": "Room 302 is dark save for the blue-grey light from the window. The Tuileries below is a sea of shadow and movement -- you can track the dead by the sounds they make, the scrape and moan carrying up three floors with sickening clarity. The minibar's hum is louder in the silence, almost companionable. The silk sheets on the unmade bed look like shed skin in the moonlight.",
+      "searched": "Room 302 has been thoroughly searched. The minibar stands open and empty, drawers pulled out, bathroom cabinets bare. It no longer feels like a safe haven."
+    },
+    "exits": {
+      "south": {
+        "roomId": "floor_3_hallway",
+        "description": "The door to the third floor hallway.",
+        "locked": false
+      }
+    },
+    "items": ["minibar_snacks", "bottled_water", "painkillers", "backpack"],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.0,
+      "types": [],
+      "maxCount": 0
+    },
+    "barricadeable": true,
+    "barricaded": false,
+    "lightLevel": "bright",
+    "notes": null
+  },
+  {
+    "id": "floor_6_hallway",
+    "name": "Sixth Floor Hallway",
+    "zone": "hotel",
+    "floor": 6,
+    "description": {
+      "default": "The sixth floor hallway is narrower than the floors below, the ceiling slanting where the mansard roof presses down. The decor here is more intimate -- toile wallpaper, smaller sconces, the feeling of being tucked beneath the eaves of Paris. Dormer windows at each end of the hall admit pale light, offering vertiginous glimpses of Rue de Rivoli far below. A fire extinguisher has been pulled from the wall and used as a blunt weapon, its red cylinder dented and smeared. The air smells of old smoke.",
+      "firstVisit": "The sixth floor feels different from the lower levels -- smaller, more personal, closer to the sky. The mansard roof creates sloping ceilings and odd angles, and the dormer windows frame the Paris skyline like paintings. Up here, the sounds of the dead on the street are muffled to a distant murmur. You notice room 605 at the far end of the hall, its door reinforced with what looks like a steel security frame. The Dali Suite. Even in the apocalypse, its legendary occupant's name commands a certain respect.",
+      "night": "The sixth floor hallway is a low tunnel of shadow beneath the mansard roof. The dormer windows are rectangles of dark blue, the city beyond them a scatter of distant fires and moonlit rooftops. The narrow proportions make every sound intimate and close. You hear your own heartbeat, the creak of old wood, and from behind the reinforced door of room 605, absolute silence.",
+      "searched": "The sixth floor hallway has been picked over. The fire extinguisher lies spent and abandoned, and the dormer windows still frame a ruined Paris."
+    },
+    "exits": {
+      "west": {
+        "roomId": "stairwell",
+        "description": "The stairwell landing, narrower up here beneath the roofline.",
+        "locked": false
+      },
+      "east": {
+        "roomId": "room_605",
+        "description": "The reinforced door to Room 605 -- the legendary Dali Suite. A modern electronic lock has been fitted alongside the original brass hardware.",
+        "locked": true,
+        "lockRequires": "room_key_605"
+      }
+    },
+    "items": ["matches"],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.1,
+      "types": ["shambler"],
+      "maxCount": 1
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "dim",
+    "notes": null
+  },
+  {
+    "id": "room_605",
+    "name": "The Dali Suite (Room 605)",
+    "zone": "hotel",
+    "floor": 6,
+    "description": {
+      "default": "The Dali Suite is a monument to magnificent madness. For thirty years, Salvador Dali made this room his Parisian home, and the hotel preserved his legacy in every surreal detail. Melting clock reproductions adorn the mantelpiece. A stuffed swan arches its neck from atop the armoire. The walls hold original sketches -- elephants on spider legs, burning giraffes -- alongside personal photographs of Dali and Gala. A private balcony through French doors offers a sweeping view of the Paris skyline: the Eiffel Tower to the west, Sacre-Coeur floating white on the northern hill. Behind a large oil painting of Dali himself, you notice the wall seems slightly recessed.",
+      "firstVisit": "You turn the key and push open the reinforced door into a room that exists outside of time and reason. The Dali Suite. For three decades, the master surrealist lived here, receiving visitors in a room that was itself a work of art. His presence saturates the space -- the bizarre objects, the sketches pinned to silk wallpaper, the lingering scent of something exotic and old. The room is untouched. Whoever locked this door did so from outside, preserving a pocket of the old world. Through the French doors, Paris sprawls in panoramic ruin, heartbreakingly beautiful even now. A pair of binoculars sits on the balcony railing, and a coil of silk rope hangs from the curtain rod, repurposed from the drapery ties.",
+      "night": "The Dali Suite is suffused with blue moonlight through the French doors. The surrealist artifacts cast impossible shadows -- the stuffed swan becomes a hunched figure, the melting clocks seem to actually drip. Dali's sketches on the walls appear to move in your peripheral vision, the burning giraffes flickering as if truly aflame. The balcony view is stunning and terrible: Paris in darkness, punctuated by scattered fires, the Eiffel Tower a black iron skeleton against the stars.",
+      "searched": "The Dali Suite has been searched. The painting of Dali has been moved aside, revealing the hidden safe behind it, now open and empty. The room feels diminished without its secrets."
+    },
+    "exits": {
+      "west": {
+        "roomId": "floor_6_hallway",
+        "description": "Back to the sixth floor hallway through the reinforced door.",
+        "locked": false
+      }
+    },
+    "items": ["binoculars", "silk_rope"],
+    "searchItems": ["revolver", "pistol_ammo", "pistol_ammo", "pistol_ammo", "pistol_ammo", "pistol_ammo", "pistol_ammo"],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.0,
+      "types": [],
+      "maxCount": 0
+    },
+    "barricadeable": true,
+    "barricaded": false,
+    "lightLevel": "bright",
+    "notes": "A leather-bound journal lies open on the writing desk, its pages covered in Dali's unmistakable spidery hand. The final entry reads: 'The persistence of memory in times of death -- this is the true surrealism. I painted melting clocks and burning horses, but reality has surpassed my wildest visions. The dead walk beneath my window in the Tuileries, and I confess even Dali is afraid. Gala, if you can hear me beyond, tell them I was never truly mad. The world simply took thirty years to catch up.'"
+  },
+  {
+    "id": "rooftop_access",
+    "name": "Rooftop Access",
+    "zone": "hotel",
+    "floor": 7,
+    "description": {
+      "default": "The stairs narrow to a utilitarian concrete passage, stripped of Le Meurice's ornamental finery. Exposed pipes run along the low ceiling, and the air is cooler here, tinged with the metallic scent of rain and zinc roofing. A heavy steel fire door blocks the way to the roof, its push bar wrapped in chain from the other side -- someone sealed it from above. A faded safety notice reads 'ACCES AU TOIT - PERSONNEL AUTORISE UNIQUEMENT.' The wind moans through gaps in the door frame, carrying the distant sounds of the city.",
+      "firstVisit": "The grand staircase gives way to bare concrete as you pass above the sixth floor. This is the building's utilitarian spine -- maintenance access, pipe runs, electrical conduits. The temperature drops noticeably. Ahead, a heavy steel fire door stands between you and the roof. Through its small wired-glass window, you can see grey sky and the edge of a terrace railing. But the door is chained shut from the roof side. You'll need the key to that padlock, or another way through.",
+      "night": "The rooftop access passage is pitch black and cold. Wind whistles through the gaps around the steel door with a keening note that sounds almost like a voice. Through the wired-glass window, you can see stars and the distant glow of fires across Paris. The door rattles in its frame with each gust, the chains on the far side clinking like something trying to get in -- or keep something out.",
+      "searched": "The maintenance passage is bare concrete and pipes. There was never anything here to find."
+    },
+    "exits": {
+      "down": {
+        "roomId": "stairwell",
+        "description": "Back down the narrowing stairs to the main stairwell.",
+        "locked": false
+      },
+      "up": {
+        "roomId": "rooftop",
+        "description": "The heavy steel door to the roof, chained and padlocked from the other side.",
+        "locked": true,
+        "lockRequires": "rooftop_key"
+      }
+    },
+    "items": [],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.05,
+      "types": ["shambler"],
+      "maxCount": 1
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "dark",
+    "notes": null
+  },
+  {
+    "id": "rooftop",
+    "name": "Belle Etoile Terrace (Rooftop)",
+    "zone": "hotel",
+    "floor": 8,
+    "description": {
+      "default": "You stand on the Belle Etoile terrace, the crown jewel of Le Meurice, seven stories above the dying city. The 360-degree panorama is staggering: to the west, the Eiffel Tower rises against the sky, its lights long dead; to the north, Sacre-Coeur perches on Montmartre like a white ghost; to the east, the Louvre stretches along the Seine, its glass pyramid shattered; and directly below, the Tuileries Garden writhes with the dead, hundreds of figures moving between the geometric hedgerows in patterns that almost -- but never quite -- resemble purpose. The wind up here is clean and cold, carrying woodsmoke from fires burning somewhere in the 5th arrondissement. A radio antenna has been rigged to the railing with duct tape and wire, its cable trailing to a gutted walkie-talkie. Someone was trying to signal for help.",
+      "firstVisit": "The steel door gives way and the sky opens above you like a revelation. After the claustrophobic darkness of the hotel, the rooftop is overwhelming -- all of Paris laid bare in a single vertiginous panorama. You grip the railing and stare. The Eiffel Tower. Sacre-Coeur. The Arc de Triomphe. Notre-Dame's scaffolding. All still standing, monuments to a civilization that built them and then, somehow, fell. Below, the Tuileries is a garden of the dead, their movement visible even from this height -- a slow, ceaseless churning, like maggots in a wound. On the railing, someone has duct-taped a makeshift radio antenna. Beside it, a flare gun and a scattering of parts. Someone made it up here. Someone tried to call for rescue. The chains on the door suggest they never came back down.",
+      "night": "The rooftop at night is the most beautiful and terrible sight in the world. Paris spreads beneath you in darkness studded with fires -- some burning in windows, some in the streets, all unattended. The Eiffel Tower is a black lattice against a star-filled sky, and Sacre-Coeur gleams bone-white in the moonlight. The dead below are invisible in the darkness, but you can hear them -- a vast, low murmur rising from the Tuileries, the collective moan of hundreds of throats that no longer need to breathe. The wind carries it up to you, and it sounds like the city itself is grieving.",
+      "searched": "The terrace has been searched thoroughly. The makeshift radio antenna sways in the wind, stripped of anything useful."
+    },
+    "exits": {
+      "down": {
+        "roomId": "rooftop_access",
+        "description": "The steel door back down into the building, now unchained.",
+        "locked": false
+      }
+    },
+    "items": ["radio_parts", "flare_gun", "rooftop_key"],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.0,
+      "types": [],
+      "maxCount": 0
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "bright",
+    "notes": null
+  }
+]

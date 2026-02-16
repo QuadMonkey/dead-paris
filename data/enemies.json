@@ -1,0 +1,68 @@
+[
+    {
+        "id": "shambler",
+        "name": "Shambler",
+        "namePlural": "Shamblers",
+        "description": "A rotting Parisian, still dressed in the tattered remains of everyday clothes. Moves slowly but relentlessly.",
+        "hpRange": [15, 25],
+        "damage": [5, 10],
+        "speed": "slow",
+        "special": [],
+        "xp": 10
+    },
+    {
+        "id": "runner",
+        "name": "Runner",
+        "namePlural": "Runners",
+        "description": "Recently turned. The muscles haven't fully decayed yet. It sprints at you with terrifying speed, jaw snapping.",
+        "hpRange": [10, 18],
+        "damage": [8, 12],
+        "speed": "fast",
+        "special": [],
+        "xp": 15
+    },
+    {
+        "id": "bloater",
+        "name": "Bloater",
+        "namePlural": "Bloaters",
+        "description": "A grotesquely swollen corpse, distended with gas. Its skin is translucent and pulsing. Do NOT let it get close.",
+        "hpRange": [40, 60],
+        "damage": [15, 20],
+        "speed": "very_slow",
+        "special": ["explodes_on_death"],
+        "xp": 25
+    },
+    {
+        "id": "crawler",
+        "name": "Crawler",
+        "namePlural": "Crawlers",
+        "description": "A legless torso dragging itself across the ground. Hides under cars and debris. You don't see it until it grabs your ankle.",
+        "hpRange": [8, 12],
+        "damage": [4, 8],
+        "speed": "slow",
+        "special": ["ambush"],
+        "xp": 8
+    },
+    {
+        "id": "horde",
+        "name": "Zombie Horde",
+        "namePlural": "Zombie Hordes",
+        "description": "A mass of writhing bodies moving as one. Dozens of dead eyes, hundreds of grasping fingers. There is no running from this.",
+        "hpRange": [80, 120],
+        "damage": [20, 30],
+        "speed": "medium",
+        "special": ["no_flee"],
+        "xp": 50
+    },
+    {
+        "id": "le_revenant",
+        "name": "Le Revenant",
+        "namePlural": "Revenants",
+        "description": "This one is different. Its movements are almost... deliberate. Its wounds knit closed before your eyes. Something ancient stirs behind those dead eyes.",
+        "hpRange": [50, 70],
+        "damage": [12, 18],
+        "speed": "medium",
+        "special": ["regenerates"],
+        "xp": 40
+    }
+]

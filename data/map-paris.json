@@ -1,0 +1,1329 @@
+[
+  {
+    "id": "rue_de_rivoli",
+    "name": "Rue de Rivoli - Hotel Entrance",
+    "zone": "exterior",
+    "description": {
+      "default": "The grand arcade of Rue de Rivoli stretches east and west, its uniform stone arches casting deep geometric shadows across the pavement. Abandoned cars choke the boulevard in a frozen metallic river, doors flung open, belongings strewn across the tarmac. The entrance to Le Meurice stands behind a wall of overturned furniture and wrapped chain, its gilded awning hanging at an angle. The Tuileries Garden gate looms across the street, half-open, and something moves between the bare trees beyond.",
+      "firstVisit": "You step out from beneath the Rivoli arcades and the scale of the catastrophe hits you. This was the most elegant boulevard in Paris -- Napoleon's imperial axis -- and now it is a graveyard of luxury cars and scattered luggage. A taxi has mounted the kerb and punched through a boutique window. The Le Meurice entrance is barricaded from inside, heavy oak furniture and chain holding whatever remains within. To the south, the iron gate of the Tuileries stands ajar, gravel paths disappearing into overgrown hedgerows. The silence is wrong. A city of two million people, and you can hear your own breathing.",
+      "night": "The arcades of Rue de Rivoli are tunnels of impenetrable shadow, the stone arches framing rectangles of moonlit street like frames in a horror film. Abandoned cars gleam dully under the blue light, their interiors black voids. The Le Meurice barricade creaks and groans with the wind, and beyond the Tuileries gate, the garden is a sea of moving darkness, shapes drifting between the trees in patterns that are almost purposeful.",
+      "searched": "The boulevard has been picked over thoroughly. Glass crunches underfoot, and the abandoned cars have been stripped of anything useful. The hotel barricade still holds."
+    },
+    "exits": {
+      "east": {
+        "roomId": "rue_de_rivoli_east",
+        "description": "The arcaded boulevard continues east toward the Louvre, shop fronts smashed and dark.",
+        "locked": false
+      },
+      "west": {
+        "roomId": "rue_de_rivoli_west",
+        "description": "The boulevard opens westward toward Place de la Concorde, wider and more exposed.",
+        "locked": false
+      },
+      "north": {
+        "roomId": "rue_du_mont_thabor",
+        "description": "A narrow side street leads north behind the hotel, disappearing into shadow.",
+        "locked": false
+      },
+      "south": {
+        "roomId": "tuileries_garden_entrance",
+        "description": "The iron gate to the Tuileries Garden stands half-open, gravel paths beyond.",
+        "locked": false
+      },
+      "inside": {
+        "roomId": "hotel_lobby",
+        "description": "The main entrance to Le Meurice, barricaded with heavy furniture and wrapped in chain. You could force it open with a crowbar.",
+        "locked": true,
+        "lockRequires": "crowbar"
+      },
+      "down": {
+        "roomId": "metro_tuileries",
+        "description": "Steps lead down to the Metro Tuileries station entrance.",
+        "locked": false
+      }
+    },
+    "items": [],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.2,
+      "types": ["shambler"],
+      "maxCount": 2
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "bright",
+    "notes": null
+  },
+  {
+    "id": "rue_de_rivoli_east",
+    "name": "Rue de Rivoli - East Arcades",
+    "zone": "exterior",
+    "description": {
+      "default": "The arcaded section of Rue de Rivoli continues eastward, its repetitive stone arches creating a hypnotic rhythm of light and shadow. Looted shops gape beneath the colonnade -- a bookshop with its shelves toppled like dominoes, a souvenir stand where miniature Eiffel Towers are scattered across the pavement like tiny gravestones. Ahead, the street opens toward the Louvre's western wing, and you can glimpse the fractured geometry of the glass pyramid catching the grey light.",
+      "firstVisit": "You move east beneath the Rivoli arcades, your footsteps echoing off the vaulted stone ceiling. This stretch was tourist country -- English bookshops, souvenir vendors, the gilded W.H. Smith -- and the detritus of that vanished world litters the pavement. Postcards of a living Paris blow across the ground like autumn leaves. A torn tricolour hangs from a balcony above. The Louvre draws closer with each step, its massive facade dominating the eastern horizon, and you notice something glinting in the wreckage of a locksmith's shop.",
+      "night": "The eastern arcades are a gallery of black archways, each one a potential ambush. The looted shops are caverns of deeper darkness, and the postcards underfoot crinkle with every step, announcing your presence to anything listening. Ahead, the Louvre is a pale cliff in the moonlight, and the broken pyramid sends scattered reflections across the courtyard like signals from a dying lighthouse.",
+      "searched": "The arcades have been thoroughly scavenged. Broken glass and scattered postcards are all that remain of the tourist shops."
+    },
+    "exits": {
+      "west": {
+        "roomId": "rue_de_rivoli",
+        "description": "Back west along the arcades toward the hotel entrance.",
+        "locked": false
+      },
+      "east": {
+        "roomId": "louvre_courtyard",
+        "description": "The street opens into the Cour Napoleon, the Louvre's grand courtyard.",
+        "locked": false
+      },
+      "north": {
+        "roomId": "rue_saint_honore",
+        "description": "A side passage leads north to Rue Saint-Honore.",
+        "locked": false
+      }
+    },
+    "items": [],
+    "searchItems": ["lockpick_set"],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.25,
+      "types": ["shambler"],
+      "maxCount": 2
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "bright",
+    "notes": null
+  },
+  {
+    "id": "rue_de_rivoli_west",
+    "name": "Rue de Rivoli - West Boulevard",
+    "zone": "exterior",
+    "description": {
+      "default": "West of the arcades, Rue de Rivoli opens into a wide boulevard exposed to the sky. The elegant Haussmann facades rise five stories on the north side, their wrought-iron balconies hung with dead window boxes. Cars are piled thicker here, some burned to blackened shells, others simply abandoned mid-lane with doors open and engines cold. A military checkpoint made of concrete barriers and razor wire has been erected and then overrun, sandbags burst and scattered. Ahead, Place de la Concorde opens like a wound in the cityscape.",
+      "firstVisit": "The arcades end and the sky opens above you as Rue de Rivoli widens toward Place de la Concorde. You feel immediately exposed -- the Haussmann buildings provide no cover on this open stretch of boulevard. A military checkpoint blocks the road ahead, but its sandbags are torn apart and the barriers shoved aside. Shell casings litter the ground like brass confetti. A jerry can of gasoline sits upright beside an overturned army truck, miraculously intact. In the distance, the Egyptian obelisk of Place de la Concorde rises against the grey sky, ancient and indifferent.",
+      "night": "The open boulevard is a killing field of moonlit tarmac and burned-out cars. Without the arcades' cover, you feel the full weight of the empty sky above. The military checkpoint casts angular shadows, and something moves behind the overturned army truck with a wet, dragging sound. Ahead, Place de la Concorde is a vast pale expanse in the moonlight, and you can see figures moving across it with the slow, awful patience of the dead.",
+      "searched": "The boulevard has been stripped clean. The military checkpoint yielded nothing new, and the overturned truck is an empty shell."
+    },
+    "exits": {
+      "east": {
+        "roomId": "rue_de_rivoli",
+        "description": "Back east toward the hotel entrance and the shelter of the arcades.",
+        "locked": false
+      },
+      "west": {
+        "roomId": "place_de_la_concorde",
+        "description": "The boulevard opens into the vast expanse of Place de la Concorde.",
+        "locked": false
+      }
+    },
+    "items": ["gasoline_can"],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.2,
+      "types": ["shambler", "runner"],
+      "maxCount": 2
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "bright",
+    "notes": null
+  },
+  {
+    "id": "rue_du_mont_thabor",
+    "name": "Rue du Mont Thabor",
+    "zone": "exterior",
+    "description": {
+      "default": "A narrow street running behind Le Meurice, lined with boutique hotels and designer ateliers whose facades of pale stone and iron balconies still project an air of quiet refinement despite the broken windows and blood-dark handprints on the walls. A delivery van has jackknifed across the road, its rear doors hanging open and contents scattered -- linen tablecloths and stacked chair frames from some long-cancelled event. The street is quieter here, sheltered from the main boulevard, but the silence feels watchful.",
+      "firstVisit": "You slip into Rue du Mont Thabor and the noise of the boulevard fades behind you. This narrow side street sits in Le Meurice's shadow, a canyon of pale limestone and wrought iron. It was a service artery -- delivery vans, staff entrances, the quiet machinery of Parisian luxury -- and it retains that backstage quality even now. A jackknifed delivery van blocks most of the road, its cargo of hotel linen spilled across the cobblestones. You spot a length of rope tangled in the debris, and strips of cloth that could serve as bandages. The street runs east toward Rue de Castiglione and north toward Saint-Honore.",
+      "night": "Rue du Mont Thabor is a slit of darkness between tall buildings, the sky a narrow ribbon of stars overhead. The jackknifed van is a hulking silhouette, and the spilled linen glows faintly white in the gloom like scattered ghosts. Your footsteps on the cobblestones sound impossibly loud. The narrow proportions amplify every sound -- a distant moan echoes between the facades, multiplied and distorted until it seems to come from everywhere.",
+      "searched": "The narrow street has been thoroughly explored. The delivery van is picked clean, and the scattered linen is trampled into the cobblestones."
+    },
+    "exits": {
+      "south": {
+        "roomId": "rue_de_rivoli",
+        "description": "South back to Rue de Rivoli and the hotel entrance.",
+        "locked": false
+      },
+      "east": {
+        "roomId": "rue_de_castiglione",
+        "description": "East along the narrow street toward Rue de Castiglione and Place Vendome.",
+        "locked": false
+      },
+      "north": {
+        "roomId": "rue_saint_honore",
+        "description": "North to Rue Saint-Honore, the old shopping street.",
+        "locked": false
+      }
+    },
+    "items": ["cloth_bandage", "rope"],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.1,
+      "types": ["shambler"],
+      "maxCount": 1
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "bright",
+    "notes": null
+  },
+  {
+    "id": "rue_de_castiglione",
+    "name": "Rue de Castiglione",
+    "zone": "exterior",
+    "description": {
+      "default": "Rue de Castiglione rises northward toward Place Vendome with the rigid elegance of a Napoleonic military avenue. Identical facades of creamy stone and ornamental ironwork line both sides, their ground-floor windows displaying the shattered remains of jewelry houses and fashion maisons. A Rolls-Royce sits on flattened tyres in front of what was a five-star hotel entrance, its paint streaked with dried blood. Shards of display-case glass litter the pavement like frozen rain. Ahead, the Vendome Column rises above the rooftops, a bronze finger pointed at indifferent heavens.",
+      "firstVisit": "You enter Rue de Castiglione and feel the ghost of old wealth pressing in from all sides. This short avenue connected the Rivoli to the Place Vendome -- the most expensive address in Paris. Cartier, Chanel, Van Cleef & Arpels: their boutiques stand violated, display cases smashed open, their treasures scattered or taken. A Rolls-Royce with diplomatic plates sits on ruined tyres, its windshield spider-webbed. None of it matters anymore. Diamonds are worthless. A can of beans is king. But somewhere in all this wreckage, useful things might hide.",
+      "night": "Rue de Castiglione is a corridor of deep shadow between the pale facades, the shuttered windows above like rows of closed eyes. Broken glass crunches underfoot with every step, and the Rolls-Royce is a black shape like a crouching animal. The Vendome Column is barely visible at the street's end, a darker line against the dark sky. The luxury boutiques are caves of absolute blackness, and you cannot see what might be standing just inside their broken doors.",
+      "searched": "The elegant street has been ransacked. The boutiques stand empty, and even the Rolls-Royce has been stripped of its leather seats."
+    },
+    "exits": {
+      "west": {
+        "roomId": "rue_du_mont_thabor",
+        "description": "West back along the narrow cross-street to Rue du Mont Thabor.",
+        "locked": false
+      },
+      "north": {
+        "roomId": "place_vendome",
+        "description": "North into Place Vendome, the column rising above the rooftops.",
+        "locked": false
+      }
+    },
+    "items": [],
+    "searchItems": ["designer_bag"],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.15,
+      "types": ["shambler"],
+      "maxCount": 1
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "bright",
+    "notes": null
+  },
+  {
+    "id": "rue_saint_honore",
+    "name": "Rue Saint-Honore",
+    "zone": "exterior",
+    "description": {
+      "default": "Rue Saint-Honore stretches in both directions, one of the oldest streets in Paris, its facades a patchwork of centuries -- medieval timber frames beside Haussmann stone, art nouveau shopfronts next to brutalist concrete. The famous shopping street has been thoroughly looted, mannequins lying in the gutter like discarded bodies, their plastic limbs at unnatural angles. A winter jacket hangs from a fire escape above, caught mid-fall. The pharmacy to the east shows a faint green cross still glowing on battery power, and to the west a church spire rises above the rooftops.",
+      "firstVisit": "You emerge onto Rue Saint-Honore and a thousand years of Parisian commerce stare back at you in ruin. This street was old when the Revolution came -- it survived that apocalypse, and the Commune, and two World Wars. It will not survive this. The shops are gutted, their windows burst outward in frozen sprays of glass. Mannequins sprawl across the pavement in attitudes of violent death. You notice a warm jacket dangling from a fire escape and a pharmacy to the east still showing its green neon cross. To the west, the baroque tower of Saint-Roch rises like a beacon of forgotten faith.",
+      "night": "Rue Saint-Honore is a dark canyon between mismatched facades. The mannequins scattered on the pavement are worse at night -- in peripheral vision they look like fallen survivors, and you find yourself checking each one. The pharmacy's green cross pulses weakly in the distance, a sickly emerald heartbeat. The church spire to the west is a black spike against the stars. Every doorway, every alley mouth is a pool of darkness that could hide anything.",
+      "searched": "The shopping street has been stripped to the bone. Mannequins and broken glass are all that remain of the Faubourg's elegance."
+    },
+    "exits": {
+      "south": {
+        "roomId": "rue_du_mont_thabor",
+        "description": "South down the cross-street to Rue du Mont Thabor.",
+        "locked": false
+      },
+      "east": {
+        "roomId": "pharmacie_saint_honore",
+        "description": "East to a pharmacy still showing its green cross, its door ajar.",
+        "locked": false
+      },
+      "north": {
+        "roomId": "marche_saint_honore",
+        "description": "North through a passage to the old market square.",
+        "locked": false
+      },
+      "west": {
+        "roomId": "eglise_saint_roch",
+        "description": "West along the street to the Church of Saint-Roch.",
+        "locked": false
+      }
+    },
+    "items": ["warm_jacket"],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.2,
+      "types": ["shambler"],
+      "maxCount": 2
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "bright",
+    "notes": null
+  },
+  {
+    "id": "rue_de_la_paix",
+    "name": "Rue de la Paix",
+    "zone": "exterior",
+    "description": {
+      "default": "Rue de la Paix climbs north from Place Vendome toward the Opera, a straight avenue of former jewellers and watchmakers whose ground-floor shutters have been torn off and inventories ransacked. Display cases stand empty behind shattered plate glass, their velvet linings faded and dusty. A signal mirror catches the light from atop an overturned display table, flashing intermittently. The Opera Garnier's copper-green dome peeks above the rooftops to the north, and behind you the Vendome Column anchors the skyline like a mast in a sea of stone.",
+      "firstVisit": "You walk north along Rue de la Paix, literally the Street of Peace, and the irony is suffocating. This was where Paris kept its most precious things -- Cartier's flagship, Boucheron, Chopard -- temples of beauty and craft. Every one has been violated, their steel shutters peeled back like sardine tins, their treasures scattered or stolen by people who briefly forgot that diamonds cannot stop the dead. A signal mirror glints at you from the wreckage, and you catch the distant silhouette of the Opera Garnier's sculptural roofline. There might be shelter there.",
+      "night": "Rue de la Paix is a dark corridor lined with empty display cases that catch your light in brief, deceptive flashes. Each jeweller's window is a black mouth, and the street's perfect straightness means anything at the far end can see you the moment you enter. The Opera dome is invisible against the night sky, but you know it is there, a massive presence in the darkness ahead. The signal mirror flashes moonlight at random intervals, a cold semaphore to no one.",
+      "searched": "The jewellers' street has been picked clean of everything but broken glass and empty velvet cases. Even the signal mirror has been taken."
+    },
+    "exits": {
+      "south": {
+        "roomId": "place_vendome",
+        "description": "South back to Place Vendome and the towering column.",
+        "locked": false
+      },
+      "north": {
+        "roomId": "opera_garnier",
+        "description": "North to the Opera Garnier, its ornate facade visible above the rooftops.",
+        "locked": false
+      }
+    },
+    "items": ["signal_mirror"],
+    "searchItems": ["lighter"],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.15,
+      "types": ["shambler"],
+      "maxCount": 1
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "bright",
+    "notes": null
+  },
+  {
+    "id": "place_vendome",
+    "name": "Place Vendome",
+    "zone": "exterior",
+    "description": {
+      "default": "Place Vendome opens before you in a perfect octagon of pale stone facades, its mathematical symmetry unbroken despite the chaos at street level. The Vendome Column rises from the center, forty-four metres of bronze relief cast from twelve hundred captured Austrian cannons, Napoleon standing at its summit in Roman toga surveying a dominion of corpses. Luxury cars are scattered across the square like toys. The Ritz Hotel's entrance canopy has collapsed, and several bodies in evening dress lie tangled in the wreckage, unmistakably and permanently dead. The square's geometry makes it dangerously exposed -- anything approaching from any direction will see you immediately.",
+      "firstVisit": "You step into Place Vendome and the space swallows you. The octagonal square is vast and symmetrical, every facade identical, every proportion calculated to project imperial power. It works -- you feel small, exposed, watched from a hundred shuttered windows. The Vendome Column dominates everything, Napoleon's bronze figure gazing south toward the Tuileries with the confidence of a man who never imagined his capital as a necropolis. At the column's base, someone has left military radio components wrapped in a tarpaulin, perhaps a dead soldier's final cache. The square is open ground. Stay too long and you will attract attention.",
+      "night": "Place Vendome at night is a pale arena under the stars, the octagonal facades reflecting enough moonlight to create an eerie luminescence. The column is a dark pillar rising into the sky, Napoleon invisible at its summit. The exposed geometry that made this square beautiful makes it terrifying now -- you can see the dead entering from every side street, drawn by sound or smell, converging on the open space with their terrible, patient gait. There is no cover here. Only the column, and it offers nothing.",
+      "searched": "The square has been scoured. The tarpaulin at the column's base is empty, and the luxury cars are stripped shells."
+    },
+    "exits": {
+      "south": {
+        "roomId": "rue_de_castiglione",
+        "description": "South down Rue de Castiglione toward Rivoli.",
+        "locked": false
+      },
+      "north": {
+        "roomId": "rue_de_la_paix",
+        "description": "North along Rue de la Paix toward the Opera.",
+        "locked": false
+      }
+    },
+    "items": ["military_radio_parts"],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.3,
+      "types": ["shambler", "runner"],
+      "maxCount": 3
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "bright",
+    "notes": null
+  },
+  {
+    "id": "place_de_la_concorde",
+    "name": "Place de la Concorde",
+    "zone": "exterior",
+    "description": {
+      "default": "The largest square in Paris opens around you in every direction, a terrifying expanse of grey stone and empty sky. The Luxor Obelisk stands at its center, thirty-three centuries of Egyptian granite utterly indifferent to the carnage at its base. The ornate fountains are dry, their bronze sea-gods presiding over basins filled with debris and dark stains. To the northwest, the Champs-Elysees stretches toward the Arc de Triomphe. To the northeast, the Jeu de Paume gallery hunkers behind the Tuileries wall. The square is a killing field -- vast, open, nowhere to hide. The dead gather here in numbers.",
+      "firstVisit": "You enter Place de la Concorde and vertigo seizes you. The square is enormous -- eight hectares of open stone where Louis XVI and Marie Antoinette lost their heads. The Obelisk rises from its center, older than Christ, older than Rome, a needle of pink granite that watched pharaohs die and now watches Paris rot. The dry fountains are monuments to absence. The Champs-Elysees stretches northwest like a cannon barrel, choked with abandoned cars as far as you can see. This place is spectacularly dangerous. A flare sits propped against the obelisk's pedestal, left by someone who needed to signal and either succeeded or died trying.",
+      "night": "Place de la Concorde at night is an ocean of darkness broken only by the obelisk's pale needle and the distant glow of fires along the Champs-Elysees. The square is so vast that sounds arrive from impossible distances -- moans, crashes, the occasional gunshot echoing across the river. The dead are everywhere here at night, dozens of them drifting across the open stone in a slow, purposeless migration. They come from the Tuileries, from the Champs-Elysees, from the river -- converging on the square as if drawn by some memory of the crowds that once filled it. This is horde territory after dark.",
+      "searched": "The vast square has been scavenged. The obelisk stands alone in its emptiness, and the dry fountains hold nothing but dust."
+    },
+    "exits": {
+      "east": {
+        "roomId": "rue_de_rivoli_west",
+        "description": "East along Rue de Rivoli toward the hotel.",
+        "locked": false
+      },
+      "northwest": {
+        "roomId": "champs_elysees_start",
+        "description": "Northwest onto the Champs-Elysees, the avenue stretching toward the Arc de Triomphe.",
+        "locked": false
+      },
+      "northeast": {
+        "roomId": "galerie_nationale",
+        "description": "Northeast to the Galerie Nationale du Jeu de Paume, a low stone building at the Tuileries corner.",
+        "locked": false
+      }
+    },
+    "items": ["flare"],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.4,
+      "types": ["shambler", "runner"],
+      "maxCount": 3
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "bright",
+    "notes": null
+  },
+  {
+    "id": "louvre_courtyard",
+    "name": "Louvre Courtyard - Cour Napoleon",
+    "zone": "exterior",
+    "description": {
+      "default": "The Cour Napoleon stretches before you, the Louvre's immense U-shaped palace enclosing the courtyard on three sides like the arms of a stone giant. At its center, the glass pyramid is cracked and listing, several of its panes shattered inward, steel framework exposed like broken bones. Dark water has pooled in the surrounding reflecting basin, choked with debris and floating paper. The museum's entrances are sealed -- heavy steel security shutters dropped during the crisis and never raised. Something moves behind the intact panes of the pyramid, deep in the underground hall below.",
+      "firstVisit": "You step into the Louvre's main courtyard and the pyramid stops you dead. I.M. Pei's glass monument to modernism is broken, its geometric perfection violated by impact fractures and missing panes. Through the gaps you can see down into the underground reception hall -- the Carrousel du Louvre -- where emergency lighting still glows a faint red. The palace itself is sealed, its priceless contents locked behind security shutters rated for terrorist attack. They held against the dead too, apparently. A shard of the pyramid's glass lies at your feet, razor-sharp and glittering. The underground mall entrance gapes nearby like an open wound.",
+      "night": "The Louvre courtyard is a cathedral of shadow, the palace's facades rising on three sides like cliff walls. The broken pyramid is a dark geometry against the stars, and through its shattered panes, the red emergency lights below pulse with a heartbeat rhythm. The reflecting pool is a mirror of black water that shows nothing but darkness. Movement in the underground hall sends flickering shadows up through the pyramid, and you realize that whatever is down there, there is a great deal of it.",
+      "searched": "The courtyard is empty and exposed. The pyramid's broken glass has been mostly collected, and the underground entrance yawns below."
+    },
+    "exits": {
+      "west": {
+        "roomId": "rue_de_rivoli_east",
+        "description": "West back to Rue de Rivoli through the palace archway.",
+        "locked": false
+      },
+      "down": {
+        "roomId": "louvre_underground",
+        "description": "Down through the underground mall entrance into the Carrousel du Louvre.",
+        "locked": false
+      }
+    },
+    "items": ["glass_shard"],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.2,
+      "types": ["shambler"],
+      "maxCount": 2
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "bright",
+    "notes": null
+  },
+  {
+    "id": "palais_royal",
+    "name": "Palais Royal",
+    "zone": "exterior",
+    "description": {
+      "default": "The Palais Royal garden is an unexpected oasis of calm, its rectangular lawn enclosed by three wings of elegant colonnaded galleries. Buren's striped columns still march across the courtyard in their black-and-white ranks, now cracked and tilted. The linden trees lining the garden have gone wild, their branches reaching across the gravel paths in tangled arches. A Metro entrance at the far corner leads underground. The enclosed space feels safer than the open streets, the tall columns providing cover and sightlines, but scratch marks on the stone suggest you are not the first to seek shelter here.",
+      "firstVisit": "You pass through the archway into the Palais Royal and the noise of the city falls away. Cardinal Richelieu's palace garden spreads before you, formal and geometric, the kind of place where Parisians once read newspapers on iron chairs and children sailed toy boats in the fountain. Buren's famous striped columns stand in their ordered grid, some toppled, most still upright. The colonnaded galleries on three sides are shadowed and still. Scratched into one of the stone columns, someone has left a message. The Metro entrance nearby leads down into darkness.",
+      "night": "The Palais Royal garden is a sunken rectangle of darkness, the colonnade galleries forming walls of deeper shadow on three sides. Buren's columns are pale sentinels in the moonlight, and the overgrown linden trees create a canopy that blocks the stars. The fountain is silent, the gravel paths silver-grey. The Metro entrance is a black mouth in the corner, exhaling stale underground air. The enclosed space that felt protective by day feels like a trap at night -- one way in, one way out, and the columns provide cover for things that do not need to see.",
+      "searched": "The palace garden has been picked over. The colonnade galleries are empty, and even Buren's columns hold no more secrets."
+    },
+    "exits": {
+      "south": {
+        "roomId": "rue_saint_honore",
+        "description": "South through the archway back to Rue Saint-Honore.",
+        "locked": false
+      },
+      "down": {
+        "roomId": "palais_royal_metro",
+        "description": "Down the stairs into the Palais Royal Metro station.",
+        "locked": false
+      }
+    },
+    "items": [],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.1,
+      "types": ["shambler"],
+      "maxCount": 1
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "bright",
+    "notes": "Scratched into a column: 'The old man comes at night. He knows the way down.'"
+  },
+  {
+    "id": "opera_garnier",
+    "name": "Opera Garnier",
+    "zone": "exterior",
+    "description": {
+      "default": "The Palais Garnier rises before you in a riot of Second Empire excess -- columns, caryatids, gilded lyres, and copper-green domes piled upon each other in magnificent defiance of restraint. The grand entrance stairs are littered with fallen masonry and shattered lamp globes, and the massive bronze doors stand half-open, revealing a sliver of the marble foyer beyond. Garnier's opera house was built to be the most opulent building in the world, and even in ruin it almost succeeds. Pigeons roost in the sculptural groups, and their cooing echoes off the facade like a ghostly ovation.",
+      "firstVisit": "You stand at the foot of the Opera Garnier and feel history pressing down on you. Charles Garnier's masterpiece took fourteen years to build, and it shows in every overwrought detail -- the winged figures, the mosaic columns, the golden lyres and dramatic masks that crowd every surface. The grand staircase is strewn with fallen plaster cherubs and broken lamp globes, crunching underfoot like eggshells. Through the half-open bronze doors, you glimpse the famous grand foyer, its mirrors still intact, reflecting infinity in both directions. This building has hidden passages, catwalks, and the legendary underground lake. It might hide other useful things too.",
+      "night": "The Opera Garnier is a black cathedral against the stars, its sculptural roofline a forest of silhouettes. The grand staircase is treacherous in the dark, littered with debris and slick with pigeon droppings. Through the half-open doors, the grand foyer's mirrors catch your light and multiply it into an army of reflections that move when you move, stop when you stop. The building groans and creaks with the settling of old stone, and from somewhere deep inside -- below the stage, perhaps, or in the cellars where the underground lake still laps at stone walls -- you hear a sound like something large shifting in water.",
+      "searched": "The Opera's grand entrance has been explored. The fallen masonry and shattered lamps hold nothing of use."
+    },
+    "exits": {
+      "south": {
+        "roomId": "rue_de_la_paix",
+        "description": "South back down Rue de la Paix toward Place Vendome.",
+        "locked": false
+      }
+    },
+    "items": [],
+    "searchItems": ["rope_ladder"],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.15,
+      "types": ["shambler"],
+      "maxCount": 2
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "bright",
+    "notes": null
+  },
+  {
+    "id": "eglise_saint_roch",
+    "name": "Eglise Saint-Roch",
+    "zone": "exterior",
+    "description": {
+      "default": "The Church of Saint-Roch stands on Rue Saint-Honore like a fortress of faith, its baroque facade pockmarked with bullet holes from Napoleon's 1795 whiff of grapeshot, now joined by fresher impacts. The heavy oak doors are closed but unlocked, a hand-written sign pinned to them in careful script. Inside, the nave stretches nearly a hundred metres in shadowed splendour, votive candles flickering on the altar where someone still tends them. Wooden planks lean against the walls, salvaged for barricading. This feels like a place the dead have not yet breached.",
+      "firstVisit": "You approach the Church of Saint-Roch and notice something remarkable -- it is intact. The baroque facade bears its centuries of scars, but the doors are solid, the windows unbroken, and a hand-written note is pinned to the entrance. Inside, the extraordinary nave unfolds before you, a chain of interconnected chapels stretching nearly the length of a football pitch. Votive candles burn on the high altar, and wooden planks are stacked neatly against the walls. Someone has been maintaining this place as a sanctuary. The silence here is different from the silence outside -- not the absence of life, but the presence of something older and calmer.",
+      "night": "Saint-Roch at night is a cavern of warm candlelight. The votive flames on the altar cast a golden glow that barely reaches the vaulted ceiling, and the baroque carvings seem to move in the flickering light -- saints writhing, angels turning their heads. The heavy doors hold firm against the outside world. This is perhaps the only truly safe place you have found, and the warmth of the candles and the smell of old incense make it almost possible to forget what waits beyond the walls. Almost.",
+      "searched": "The church has been searched respectfully. The wooden planks and candles were the only practical supplies, and the sanctuary remains undisturbed."
+    },
+    "exits": {
+      "east": {
+        "roomId": "rue_saint_honore",
+        "description": "East through the heavy doors back to Rue Saint-Honore.",
+        "locked": false
+      }
+    },
+    "items": ["wooden_plank", "wooden_plank", "candles"],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.0,
+      "types": [],
+      "maxCount": 0
+    },
+    "barricadeable": true,
+    "barricaded": false,
+    "lightLevel": "dim",
+    "notes": "A note pinned to the door: 'Sanctuary. Claire is here. She can help.'"
+  },
+  {
+    "id": "galerie_nationale",
+    "name": "Galerie Nationale du Jeu de Paume",
+    "zone": "exterior",
+    "description": {
+      "default": "The Jeu de Paume gallery sits at the northwest corner of the Tuileries, a low neoclassical building of pale stone with tall arched windows. Originally built for real tennis, then infamous as the Nazi art depot during the Occupation, it now serves a grimmer purpose -- its thick walls and small windows make it naturally defensible. The entrance is partially barricaded with sandbags, and shell casings litter the steps. Inside, the exhibition halls are empty of art but show signs of recent habitation: sleeping bags, empty ration packets, a makeshift latrine.",
+      "firstVisit": "You approach the Jeu de Paume and recognize military handiwork in the sandbag emplacement at the entrance. Someone fortified this building early, using its thick stone walls and limited entry points as a natural stronghold. The gallery's history is grimly appropriate -- during the Occupation, Rose Valland secretly catalogued every piece of art the Nazis stored here, risking her life to preserve what mattered. Now the exhibition halls hold sleeping bags instead of paintings, and the art of survival has replaced all other forms. The building could be secured again with effort. Binoculars might be hidden among the military gear.",
+      "night": "The Jeu de Paume is a pale block in the darkness, its arched windows reflecting nothing. The sandbag emplacement at the entrance creates deeper shadows. Inside, the thick stone walls muffle the sounds of the night city to a distant murmur, and the exhibition halls feel almost peaceful in their emptiness. But the windows face Place de la Concorde, and through them you can see the dead crossing the vast square in their slow, aimless patrols.",
+      "searched": "The gallery has been thoroughly searched. The military supplies have been stripped, and the exhibition halls are bare."
+    },
+    "exits": {
+      "southwest": {
+        "roomId": "place_de_la_concorde",
+        "description": "Southwest across the corner of the Tuileries to Place de la Concorde.",
+        "locked": false
+      },
+      "east": {
+        "roomId": "tuileries_garden_entrance",
+        "description": "East along the Tuileries wall to the garden entrance.",
+        "locked": false
+      }
+    },
+    "items": [],
+    "searchItems": ["binoculars"],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.1,
+      "types": ["shambler"],
+      "maxCount": 1
+    },
+    "barricadeable": true,
+    "barricaded": false,
+    "lightLevel": "dim",
+    "notes": null
+  },
+  {
+    "id": "champs_elysees_start",
+    "name": "Avenue des Champs-Elysees - Lower End",
+    "zone": "exterior",
+    "description": {
+      "default": "The most famous avenue in the world stretches northwest from Place de la Concorde, a river of chestnut trees and frozen traffic climbing toward the distant Arc de Triomphe. The trees have shed their leaves onto a carpet of abandoned vehicles -- taxis, buses, military trucks, civilian cars locked bumper to bumper in a final, futile evacuation. Some have been burned. Others have been torn open from outside. A jerry can of gasoline sits wedged between two cars, overlooked in the exodus. The avenue's width makes it dangerously exposed, and the dead wander here in greater numbers, drawn perhaps by some residual memory of crowds.",
+      "firstVisit": "You step onto the Champs-Elysees and the scale of the disaster crystallizes. This avenue was the pride of France, the stage for military parades and national celebrations, and it died choking on its own traffic. The evacuation gridlock extends as far as you can see, a frozen river of metal and desperation. Doors hang open. Belongings are scattered. A child's bicycle lies tangled in a bus's front wheel. The Arc de Triomphe is a grey smudge in the distance, impossibly far away. The dead move between the cars with the slow patience of commuters who have nowhere left to go.",
+      "night": "The Champs-Elysees at night is a dark canyon of dead chestnuts and abandoned metal. The trees form a canopy that blocks the stars, and the cars are a labyrinth of sharp edges and blind corners. Movement is constant -- the dead threading between vehicles, bumping against doors, their moans echoing off the metal in a low, industrial drone. The Arc de Triomphe is invisible in the darkness. The avenue that once blazed with light is the darkest place in the city.",
+      "searched": "The lower Champs-Elysees has been scavenged. The cars are stripped and the gutters empty."
+    },
+    "exits": {
+      "southeast": {
+        "roomId": "place_de_la_concorde",
+        "description": "Southeast back to Place de la Concorde.",
+        "locked": false
+      }
+    },
+    "items": ["gasoline_can"],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.3,
+      "types": ["runner", "shambler"],
+      "maxCount": 3
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "bright",
+    "notes": null
+  },
+  {
+    "id": "pharmacie_saint_honore",
+    "name": "Pharmacie Saint-Honore",
+    "zone": "exterior",
+    "description": {
+      "default": "The pharmacy's green neon cross still flickers on battery power, a beacon of false hope in the dead city. Inside, the shop has been partially looted -- shelves swept clean of painkillers and cold medicine -- but the prescription counter in the back remains intact behind its security shutter, half-raised. Pill bottles and blister packs litter the floor. The air smells of antiseptic and spilled cough syrup. Glass display cases hold emptied boxes of bandages and antiseptic cream. Someone got the essentials, but deeper supplies might remain behind the counter.",
+      "firstVisit": "You push through the pharmacy's broken door and the familiar smell of disinfectant hits you like a memory from another life. The shop has been hit by looters, but they were panicked and hasty -- they grabbed the obvious shelves and ran. The prescription counter in the back is still partially secured behind its rolling shutter, and you can see pill bottles through the gap. Antibiotics. Bandages. Real painkillers. The pharmacist's body is slumped behind the counter in a white coat stained dark red, but the supplies around them are untouched. This is a goldmine.",
+      "night": "The pharmacy's flickering green cross throws sickly light across the ransacked shelves. Inside, the darkness is thick with the smell of chemicals, and broken glass crunches underfoot. The prescription counter is a shadow behind its half-raised shutter, and you can hear something moving in the back storeroom -- a wet, scraping sound, like something dragging itself across a tiled floor.",
+      "searched": "The pharmacy has been thoroughly searched. The prescription counter stands open and emptied, and the green cross still flickers above the door."
+    },
+    "exits": {
+      "west": {
+        "roomId": "rue_saint_honore",
+        "description": "West back to Rue Saint-Honore.",
+        "locked": false
+      }
+    },
+    "items": ["antibiotics", "bandages", "painkillers"],
+    "searchItems": ["first_aid_kit"],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.1,
+      "types": ["crawler"],
+      "maxCount": 1
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "dim",
+    "notes": null
+  },
+  {
+    "id": "commissariat_1er",
+    "name": "Commissariat du 1er Arrondissement",
+    "zone": "exterior",
+    "description": {
+      "default": "The police station of the 1st arrondissement has been ransacked with methodical violence. Filing cabinets are overturned, papers scattered across the floor in drifts. The reception desk is splintered, its bulletproof glass cracked but holding. Cell doors stand open in the back corridor. The armoury -- a heavy steel door at the end of the hallway -- has been forced open with cutting tools, its shelves mostly emptied. But in the chaos of the last days, not everything was taken. A police baton lies abandoned on the duty sergeant's desk, and the evidence lockers might yield surprises.",
+      "firstVisit": "You enter the commissariat and the smell of old gunpowder and fear hits you. This was the last stand for the 1st arrondissement's police force, and the evidence of their fight and failure is written in bullet holes and bloodstains across every surface. The reception area is destroyed, the cells empty and open, the break room a mess of overturned chairs and cold coffee. The armoury has been breached -- someone got in with an angle grinder -- but the rush left things behind. A wounded officer's note is pinned to the duty board, the handwriting increasingly shaky. This is worth searching thoroughly.",
+      "night": "The police station is a maze of dark corridors and open cell doors. The duty room's fluorescent lights are dead, and your own light source creates jumping shadows between the overturned filing cabinets. The cells in the back corridor are black rectangles, each one requiring courage to check. The armoury door hangs open at the hallway's end, and the darkness beyond it is absolute. Something drips in the ceiling above the break room with metronomic persistence.",
+      "searched": "The commissariat has been methodically searched. The armoury stands empty, and the evidence lockers are cleaned out."
+    },
+    "exits": {
+      "south": {
+        "roomId": "marche_saint_honore",
+        "description": "South back to the market square.",
+        "locked": false
+      }
+    },
+    "items": ["police_baton"],
+    "searchItems": ["pistol_ammo", "pistol_ammo", "pistol_ammo", "pistol_ammo", "kevlar_vest", "car_keys", "radio_manual"],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.15,
+      "types": ["shambler"],
+      "maxCount": 2
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "dim",
+    "notes": "A wounded officer's note: 'Radio freq 121.5 MHz - military evac channel. CDG still operational as of Day 3.'"
+  },
+  {
+    "id": "marche_saint_honore",
+    "name": "Marche Saint-Honore",
+    "zone": "exterior",
+    "description": {
+      "default": "The old market square is a glass-and-steel modernist intrusion amid the classical stone facades, Ricardo Bofill's transparent market building now serving as a macabre display case for its looted interior. Market stalls are overturned, produce long rotted to black slime, but sealed canned goods and bottled water have rolled into corners and under collapsed tables. The square's openness makes it feel exposed, but the surrounding buildings provide some cover. The commissariat's entrance is visible to the north, its blue lamp still hanging above the door, unlit.",
+      "firstVisit": "You enter the Marche Saint-Honore and your stomach growls involuntarily. This was a covered market, and despite the looting, the ghost of food lingers in the air -- rotting fruit, stale bread, the sour tang of spoiled cheese. The glass market building is Bofill's modern design, all transparency and clean lines, now smeared with grime and cracked in places. But the market's utilitarian purpose means practical supplies. Canned goods have scattered from overturned stalls, and bottles of water lie where they rolled. You spot the police station entrance to the north. If the armoury hasn't been completely stripped, it could change everything.",
+      "night": "The market square's glass building is a lantern of moonlight, its transparent walls revealing the dark shapes of overturned stalls within. The surrounding classical facades lean in like spectators at an arena. Every sound echoes off the glass and stone in unpredictable ways, making it impossible to pinpoint direction. The commissariat to the north is a dark block, its blue lamp a dead eye above the door.",
+      "searched": "The market has been stripped clean. Overturned stalls hold nothing but stains and spoiled produce."
+    },
+    "exits": {
+      "south": {
+        "roomId": "rue_saint_honore",
+        "description": "South back to Rue Saint-Honore.",
+        "locked": false
+      },
+      "north": {
+        "roomId": "commissariat_1er",
+        "description": "North to the 1st arrondissement police station.",
+        "locked": false
+      }
+    },
+    "items": ["canned_food", "canned_food", "bottled_water", "bottled_water"],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.2,
+      "types": ["shambler"],
+      "maxCount": 2
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "bright",
+    "notes": null
+  },
+  {
+    "id": "louvre_underground",
+    "name": "Carrousel du Louvre - Underground Mall",
+    "zone": "exterior",
+    "description": {
+      "default": "The underground shopping mall beneath the Louvre pyramid is a cathedral of commercial ruin, its long corridors lined with gutted boutiques and overturned kiosks. Emergency lighting bathes everything in a dim red glow, casting the inverted glass pyramid overhead in bloody light. The air is thick and stale, carrying the smell of mildew and something worse. Escalators stand frozen mid-stride. A food court at the eastern end still holds sealed canned goods amid the wreckage, and someone has left a roll of duct tape and spare flashlight batteries on a bench, perhaps a supply cache they never returned for.",
+      "firstVisit": "You descend into the Carrousel du Louvre and the world above vanishes. The underground mall stretches in red-lit corridors beneath the pyramid, its luxury shops now tombs of broken glass and scattered merchandise. The inverted pyramid hangs above the central junction, its glass intact but dark, a geometric stalactite in the gloom. This place was meant for tourists buying souvenir scarves and overpriced coffee. Now it is a supply cache for the desperate. You find canned food, flashlight batteries, and a roll of duct tape. A Japanese tourist's journal lies open on a bench beside a bamboo sword.",
+      "night": "The underground mall knows no day or night, but the darkness feels heavier when the world above sleeps. The red emergency lights pulse faintly, and the inverted pyramid is a black void overhead. Sounds carry strangely down here -- footsteps, dripping water, the creak of frozen escalators -- all amplified and distorted by the corridors until they seem to come from everywhere. Something moves in the food court at the far end, knocking cans across the floor with slow, clumsy movements.",
+      "searched": "The underground mall has been thoroughly looted. The shops are empty shells, and the food court benches hold nothing but dust."
+    },
+    "exits": {
+      "up": {
+        "roomId": "louvre_courtyard",
+        "description": "Up the stairs to the Louvre courtyard and open sky.",
+        "locked": false
+      },
+      "down": {
+        "roomId": "metro_louvre_rivoli",
+        "description": "Down a service corridor to the Metro Louvre-Rivoli station.",
+        "locked": false
+      }
+    },
+    "items": ["canned_food", "canned_food", "flashlight_batteries", "duct_tape"],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.25,
+      "types": ["shambler", "crawler"],
+      "maxCount": 2
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "dark",
+    "notes": "A Japanese tourist's journal: 'I practice my kendo every morning. It keeps me sane. If you find this, I am probably still here.'"
+  },
+  {
+    "id": "tuileries_garden_entrance",
+    "name": "Tuileries Garden - Entrance",
+    "zone": "exterior",
+    "description": {
+      "default": "The iron gate of the Tuileries Garden stands half-open on rusted hinges, its ornate scrollwork draped with shreds of clothing caught during some desperate passage. Beyond, the formal gravel paths stretch south between overgrown parterres and untrimmed hedgerows that Catherine de Medici would not recognize. Marble statues of nymphs and river gods stand at regular intervals, their white forms startling against the grey-green overgrowth. The garden feels exposed -- long sightlines in every direction, minimal cover between the low hedges. To the west, the Jeu de Paume gallery is visible at the garden's corner.",
+      "firstVisit": "You pass through the Tuileries gate and enter what was once the most refined garden in Europe. Andre Le Notre designed these grounds for Louis XIV, and for three centuries the geometry held -- gravel paths at perfect right angles, hedgerows trimmed to mathematical precision, statues placed with the care of chess pieces. Nature is reclaiming it now. Grass pushes through the gravel, hedges sprawl unpruned, and the formal parterres are wild with weeds. But the garden's open plan, which once invited leisurely strolls, now offers dangerous exposure. You can see far, but you can also be seen.",
+      "night": "The Tuileries at night is a formal wilderness under the stars. The marble statues glow faintly white, each one a shock of pale form in the darkness, and more than once you mistake them for standing figures. The gravel paths crunch beneath your feet, announcing your presence to the entire garden. The overgrown hedgerows rustle with movement that might be wind, might be rats, might be something worse. The iron gate behind you creaks in the breeze like a slow metronome.",
+      "searched": "The garden entrance has been explored. The gravel paths and overgrown hedges hold nothing of use."
+    },
+    "exits": {
+      "north": {
+        "roomId": "rue_de_rivoli",
+        "description": "North through the iron gate back to Rue de Rivoli.",
+        "locked": false
+      },
+      "west": {
+        "roomId": "galerie_nationale",
+        "description": "West along the garden wall to the Jeu de Paume gallery.",
+        "locked": false
+      },
+      "south": {
+        "roomId": "tuileries_garden_center",
+        "description": "South deeper into the garden toward the Grand Bassin.",
+        "locked": false
+      }
+    },
+    "items": [],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.2,
+      "types": ["shambler"],
+      "maxCount": 2
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "bright",
+    "notes": null
+  },
+  {
+    "id": "tuileries_garden_center",
+    "name": "Tuileries Garden - Grand Bassin",
+    "zone": "exterior",
+    "description": {
+      "default": "The Grand Bassin octagonal pond lies at the garden's heart, its waters green and stagnant beneath a scum of fallen leaves. Rusted iron chairs surround the pool in a parody of Parisian leisure, some overturned, others still upright as if their occupants might return at any moment. The dry fountain at the basin's center rises in tiers of algae-stained stone. The long axis of the garden stretches in both directions -- north to the Rivoli gate, south toward the Seine. The exposure here is absolute. You are in the crosshairs of every sightline the garden offers. A wooden plank lies across two chairs, a makeshift bench abandoned mid-rest.",
+      "firstVisit": "You reach the Grand Bassin and the centre of the Tuileries opens around you in terrifying exposure. The octagonal pool was once the social hub of the garden, where children sailed toy boats and elderly Parisians sat in iron chairs watching the world go by. The chairs are still here, the boats are still here -- tiny wooden sailboats capsized in green water -- but the world they watched has gone. The garden's geometry makes you a target: north-south, east-west, every axis converges on this point. A wooden plank across two chairs suggests someone else stopped here. They did not stay.",
+      "night": "The Grand Bassin is a dark mirror under the stars, its stagnant surface reflecting nothing but blackness. The iron chairs are skeletal silhouettes around the pool, and the fountain is a shapeless mass of shadow at its center. The garden's long sightlines, so dangerous by day, are useless now -- you cannot see past the nearest hedgerow. But you can hear. The dead are in the garden. Their footsteps on the gravel, their low moaning, the wet sound of bodies brushing through overgrown hedges. They are converging.",
+      "searched": "The bassin area has been searched. The iron chairs and stagnant pool offer nothing new."
+    },
+    "exits": {
+      "north": {
+        "roomId": "tuileries_garden_entrance",
+        "description": "North back toward the garden entrance and Rue de Rivoli.",
+        "locked": false
+      },
+      "south": {
+        "roomId": "tuileries_garden_south",
+        "description": "South toward the Seine and the garden's southern terrace.",
+        "locked": false
+      }
+    },
+    "items": ["wooden_plank"],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.25,
+      "types": ["shambler"],
+      "maxCount": 2
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "bright",
+    "notes": null
+  },
+  {
+    "id": "tuileries_garden_south",
+    "name": "Tuileries Garden - South Terrace",
+    "zone": "exterior",
+    "description": {
+      "default": "The garden's southern terrace rises on an earthen ramp to a stone balustrade overlooking the Seine. The view from here would once have been magnificent -- the river, the Left Bank, the gold dome of Les Invalides in the distance -- and it remains magnificent in the terrible way that ruined beauty can be. Below the balustrade, stone steps descend to the Quai des Tuileries and the river embankment. Overgrown chestnut trees line the terrace, their branches creating patches of shade and cover. A few iron benches remain bolted to the gravel.",
+      "firstVisit": "You climb the southern terrace and the Seine comes into view, a grey-brown ribbon cutting through the city. From up here, the destruction has a terrible grandeur -- you can see the Left Bank's rooftops, the distant dome of Les Invalides still gilded and gleaming, and the bridges spanning the river in their graceful arcs. Some are blocked with vehicles. Some show signs of deliberate destruction. The stone balustrade is chest-high and solid, carved with classical motifs. Below, steps lead down to the embankment road and the river itself. The water still flows. The water doesn't care.",
+      "night": "The southern terrace overlooks a river of liquid darkness. The Seine is invisible save for occasional glints of moonlight on its surface, and the Left Bank is a low silhouette studded with distant fires. The balustrade is cold stone under your hands, and the steps below descend into absolute shadow. The chestnut trees rustle overhead, and something moves on the embankment road below -- you can hear footsteps on stone, slow and irregular, punctuated by the scrape of dragging limbs.",
+      "searched": "The southern terrace holds nothing new. The stone benches and balustrade are as empty as the view is vast."
+    },
+    "exits": {
+      "north": {
+        "roomId": "tuileries_garden_center",
+        "description": "North back toward the Grand Bassin.",
+        "locked": false
+      },
+      "south": {
+        "roomId": "quai_des_tuileries",
+        "description": "South down the stone steps to the river embankment.",
+        "locked": false
+      }
+    },
+    "items": [],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.2,
+      "types": ["shambler"],
+      "maxCount": 2
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "bright",
+    "notes": null
+  },
+  {
+    "id": "quai_des_tuileries",
+    "name": "Quai des Tuileries",
+    "zone": "exterior",
+    "description": {
+      "default": "The embankment road runs along the Seine's north bank, stone steps descending to the water's edge where the river laps at algae-covered walls. Abandoned bouquiniste stalls line the stone parapet, their green wooden boxes still bolted shut, preserving whatever books and prints they held. Cars are scattered along the quai, some pushed aside to clear a path, others driven into the river wall. A boat oar and a jerry can of fuel sit on the steps, left by someone planning a river escape. To the east and west, stone bridges span the Seine. Below the steps, a storm drain grate leads into the sewer system.",
+      "firstVisit": "You descend to the Quai des Tuileries and the Seine is right there, close enough to touch. The river is wider than you expected, its current deceptively strong, carrying debris and worse downstream toward the sea. The embankment road is quieter than the streets above, the river's presence somehow dampening the city's menace. The bouquiniste stalls -- those iconic green boxes of second-hand books -- are still locked, their contents preserved by simple padlocks. You find a boat oar and a fuel can on the steps, and a dead survivor's journal tucked into a stall's bracket. The storm drain at water level offers access to the sewers beneath the city.",
+      "night": "The quai is a narrow shelf between the dark garden above and the black river below. The Seine mutters and laps at the stone steps, and things float past in the current that you deliberately do not look at. The bouquiniste stalls are dark sentinels along the parapet, and the bridges to east and west are pale arcs across the void. The storm drain exhales warm, foul air at water level, and you hear sounds from within -- echoes, dripping, and something that might be movement in the tunnels below.",
+      "searched": "The embankment has been picked clean. The bouquiniste stalls stand empty, their padlocks cut, and the river steps are bare."
+    },
+    "exits": {
+      "north": {
+        "roomId": "tuileries_garden_south",
+        "description": "North up the stone steps to the Tuileries' southern terrace.",
+        "locked": false
+      },
+      "east": {
+        "roomId": "pont_royal",
+        "description": "East along the embankment to the Pont Royal.",
+        "locked": false
+      },
+      "west": {
+        "roomId": "pont_des_arts",
+        "description": "West along the embankment to the Pont des Arts.",
+        "locked": false
+      },
+      "down": {
+        "roomId": "sewer_entrance",
+        "description": "Down through the storm drain grate into the sewer system.",
+        "locked": false
+      }
+    },
+    "items": ["boat_oar", "fuel_can"],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.15,
+      "types": ["shambler"],
+      "maxCount": 1
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "bright",
+    "notes": "A dead survivor's journal: 'Boat at Port de Solferino. Downstream. Engine damaged but fixable. Fuel from cars. Get out via the river.'"
+  },
+  {
+    "id": "pont_royal",
+    "name": "Pont Royal",
+    "zone": "exterior",
+    "description": {
+      "default": "The Pont Royal spans the Seine in five elegant stone arches, the oldest bridge in central Paris still bearing traffic -- though the traffic now is a frozen pileup of cars, trucks, and a municipal bus that has jackknifed across both lanes. The wreckage creates a natural chokepoint, blocking passage but also blocking sightlines. You can hear the river churning beneath the bridge, swollen with debris. On the far side, the Left Bank's Quai Voltaire is visible through gaps in the vehicular barricade. Crossing this bridge means threading through a labyrinth of dead metal with no room to manoeuvre.",
+      "firstVisit": "You approach the Pont Royal and assess the situation. The bridge is a five-arch stone masterpiece from 1689, built to last centuries, and it will outlast all of you. But the car pileup across its deck has turned it into a killing corridor. Vehicles are wedged bumper to bumper, doors open, interiors dark. The bus at the center blocks everything, its windows smashed inward. Moving through this means squeezing between cars with zero visibility and no room to swing a weapon. But it is the most direct route to the Left Bank. The sound of the river below is constant, hypnotic, almost loud enough to mask other sounds. Almost.",
+      "night": "The Pont Royal is a tunnel of twisted metal under the stars. The car pileup creates walls on both sides, and the gaps between vehicles are slots of absolute darkness. The river roars below, loud enough to cover footsteps -- yours and theirs. You can see nothing of the Left Bank until you emerge from the far side, if you emerge. The bridge's stone balustrades glow faintly in the moonlight above the car roofs, and the bus at the center is a dark whale breaching a sea of metal.",
+      "searched": "The bridge has been searched car by car. The vehicles are empty husks, and the pileup offers no new resources."
+    },
+    "exits": {
+      "north": {
+        "roomId": "quai_des_tuileries",
+        "description": "North back to the Quai des Tuileries on the Right Bank.",
+        "locked": false
+      },
+      "south": {
+        "roomId": "quai_voltaire",
+        "description": "South through the car pileup to the Quai Voltaire on the Left Bank.",
+        "locked": false
+      }
+    },
+    "items": [],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.35,
+      "types": ["shambler", "runner"],
+      "maxCount": 3
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "bright",
+    "notes": null
+  },
+  {
+    "id": "pont_des_arts",
+    "name": "Pont des Arts",
+    "zone": "exterior",
+    "description": {
+      "default": "The Pont des Arts is a slender pedestrian bridge of iron and wood, its railings once famously weighed down by lovers' padlocks before the city removed them. A few stubborn locks still cling to the mesh panels, their keys long thrown into the Seine. The wooden deck is clear of vehicles -- pedestrians only -- offering an unobstructed crossing but zero cover. The views are extraordinary: the Louvre to the east, the Institut de France's dome to the south, the river flowing beneath in its eternal indifference. A single padlock lies on the deck, dropped by someone in a hurry.",
+      "firstVisit": "You step onto the Pont des Arts and the city opens around you in a panorama of beautiful desolation. This was the lovers' bridge, where couples attached padlocks to the railing and threw the keys into the Seine as pledges of eternal devotion. The city removed most of the locks years ago, but a few remain, rusted symbols of promises made in a world that no longer exists. The wooden deck is clear and wide, an easy crossing, but you are utterly exposed -- visible from both banks, from the bridges upstream and downstream, from the Louvre and the Institut. A padlock lies on the deck. You wonder if the person who dropped it made it across.",
+      "night": "The Pont des Arts is a narrow line across the dark void of the Seine. The wooden planks creak underfoot, and the iron railings hum faintly in the wind. The remaining padlocks rattle against the mesh like tiny bells. You are suspended between two banks of shadow, utterly exposed, the river below a rushing blackness that swallows your light before it reaches the surface. The Louvre is a dark mass to the east. The Institut's dome is a pale curve to the south. And on the bridge, there is only you and whatever else is crossing.",
+      "searched": "The pedestrian bridge offers nothing new. The wooden deck is bare, and the remaining padlocks are just rusted metal."
+    },
+    "exits": {
+      "east": {
+        "roomId": "quai_des_tuileries",
+        "description": "East back along the Right Bank embankment.",
+        "locked": false
+      },
+      "south": {
+        "roomId": "quai_voltaire",
+        "description": "South across the bridge to the Left Bank's Quai Voltaire.",
+        "locked": false
+      }
+    },
+    "items": ["padlock"],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.2,
+      "types": ["shambler"],
+      "maxCount": 2
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "bright",
+    "notes": null
+  },
+  {
+    "id": "quai_voltaire",
+    "name": "Quai Voltaire",
+    "zone": "exterior",
+    "description": {
+      "default": "The Left Bank's Quai Voltaire is quieter than the Right Bank, its antique shops and art galleries still wearing facades of cultured refinement despite their smashed windows and looted interiors. The embankment road is narrower here, pressed between the river wall and the elegant buildings. Voltaire died in one of these apartments. Baudelaire lived in another. Their literary ghosts seem more present than the actual dead, who are scarcer on this side of the river. The Musee d'Orsay's massive railway-station facade is visible to the east, and the two bridges connect back to the Right Bank.",
+      "firstVisit": "You cross to the Left Bank and the atmosphere shifts immediately. The Quai Voltaire was always quieter than the Right Bank -- a street of antique dealers and private galleries, where serious-looking people browsed serious-looking art. That character survives even now, lending the destruction a more dignified quality. Windows are broken but not smashed; doors are open but not torn off. The dead are fewer here, perhaps because the living population was smaller to begin with. You can see the Musee d'Orsay's distinctive clock face to the east, its hands stopped at some past hour. The bridges behind you offer routes back to the Right Bank.",
+      "night": "Quai Voltaire at night is a narrow channel between the dark river and the silent facades. The antique shops are caverns of shadow, their contents invisible. The embankment wall is hip-high, and the Seine slides past below, black and fast. The quiet that was welcome by day is oppressive now -- the Left Bank's silence feels like something holding its breath. The Musee d'Orsay's clock face is a pale disc in the distance, its stopped hands pointing to a time that no longer matters.",
+      "searched": "The Left Bank embankment has been searched. The antique shops held nothing practical, and the literary ghosts have nothing to offer."
+    },
+    "exits": {
+      "north": {
+        "roomId": "pont_royal",
+        "description": "North across the Pont Royal to the Right Bank.",
+        "locked": false
+      },
+      "west": {
+        "roomId": "pont_des_arts",
+        "description": "West to the Pont des Arts footbridge.",
+        "locked": false
+      },
+      "east": {
+        "roomId": "musee_dorsay",
+        "description": "East along the quai to the Musee d'Orsay.",
+        "locked": false
+      }
+    },
+    "items": [],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.1,
+      "types": ["shambler"],
+      "maxCount": 1
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "bright",
+    "notes": null
+  },
+  {
+    "id": "musee_dorsay",
+    "name": "Musee d'Orsay",
+    "zone": "exterior",
+    "description": {
+      "default": "The Musee d'Orsay's Beaux-Arts facade stretches along the riverfront, its massive railway-station arches and ornate clock face presiding over the Left Bank like a secular cathedral. The entrance has been barricaded from inside with museum display cases and cafe furniture, but a faded sign is taped to the glass: survivors inside, willing to trade. The museum's thick stone walls and limited entry points make it a natural fortress. Through the barricade gaps, you can glimpse the vast interior -- the central nave's soaring iron-and-glass roof, and the faint glow of light from within.",
+      "firstVisit": "You stand before the Musee d'Orsay and feel a strange surge of hope. The former Gare d'Orsay -- a railway station converted to an art museum -- is built like a fortress, its stone walls metres thick, its entrances few and controllable. And someone has made it one. The barricade across the entrance is professional -- heavy display cases, steel cafe tables, all wedged together with precision. A sign taped to the glass indicates survivors inside. You knock three times, as instructed. For a long moment, nothing. Then a voice from within, cautious but human. The first living voice you have heard in days.",
+      "night": "The Musee d'Orsay is a dark cliff along the riverbank, its railway arches like the ribs of a beached whale. The great clock face glows faintly in the moonlight, its stopped hands casting tiny shadows. The barricade is a wall of shadow at the entrance, but faint light leaks from within -- lamplight or candlelight, warm and amber, unmistakably human. The sign on the glass is unreadable in the dark, but you remember what it said. You knock three times and wait, exposed on the pavement, the river at your back.",
+      "searched": "The museum entrance has been examined but the interior remains controlled by its occupants. The barricade is not yours to search."
+    },
+    "exits": {
+      "west": {
+        "roomId": "quai_voltaire",
+        "description": "West along the quai back toward the bridges.",
+        "locked": false
+      },
+      "south": {
+        "roomId": "seine_dock",
+        "description": "South down the embankment steps to the Port de Solferino dock.",
+        "locked": false
+      }
+    },
+    "items": [],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.05,
+      "types": ["shambler"],
+      "maxCount": 1
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "bright",
+    "notes": "Faded sign: 'Survivors inside. Knock three times. We trade.'"
+  },
+  {
+    "id": "seine_dock",
+    "name": "Port de Solferino - Seine Dock",
+    "zone": "exterior",
+    "description": {
+      "default": "The Port de Solferino is a stone dock jutting into the Seine, its iron bollards and mooring rings green with river algae. A battered motorboat is tied to the dock with fraying rope, its hull cracked and engine housing open, parts scattered across the deck. The boat rocks gently in the current, its fibreglass hull scraping against the stone with each wave. A toolbox sits on the dock beside a replacement engine part still wrapped in oily cloth. The river stretches downstream toward freedom -- if you can get the boat running. The Musee d'Orsay rises above the embankment wall to the north.",
+      "firstVisit": "You descend the embankment steps and there it is -- the boat from the dead survivor's journal. A battered motorboat, maybe five metres long, tied to the dock with rope that is more optimism than nylon. The hull is cracked along the waterline, the engine housing gaping open with parts removed and scattered. Someone was working on this. Someone who understood engines and had a plan: fix the boat, fuel it, and ride the Seine downstream to the coast. They left their tools and a replacement engine part wrapped in oily cloth. They never came back. But the plan is still good. The river still flows. The sea still waits.",
+      "night": "The dock is a narrow stone platform extending into absolute darkness. The Seine is a rushing void beside you, its current audible but invisible. The motorboat knocks against the stone in a slow, hollow rhythm, and the tools on the dock gleam faintly when your light catches them. The Musee d'Orsay is a dark presence above the embankment wall, and somewhere inside, lamplight flickers. The river stretches downstream into the night, toward the coast, toward escape, toward whatever waits beyond the city of the dead.",
+      "searched": "The dock has been searched. The boat remains, but its supplies and tools have been claimed."
+    },
+    "exits": {
+      "north": {
+        "roomId": "musee_dorsay",
+        "description": "North up the embankment steps to the Musee d'Orsay.",
+        "locked": false
+      }
+    },
+    "items": ["boat_engine_part", "toolbox"],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.15,
+      "types": ["shambler"],
+      "maxCount": 2
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "bright",
+    "notes": "The boat is here. A battered motorboat with a cracked hull and dead engine. With the right parts and tools, it could carry you to freedom."
+  },
+  {
+    "id": "metro_tuileries",
+    "name": "Metro Tuileries - Entrance",
+    "zone": "underground",
+    "description": {
+      "default": "The Art Nouveau entrance to Metro Tuileries rises from the pavement in its familiar iron-and-glass canopy, the green painted metalwork of Hector Guimard's design now flaking and rusted. The stairs descend into a gathering darkness, the white ceramic tiles of the station walls visible for the first few metres before the light gives out. A faint draught rises from below, carrying the unmistakable metro smell -- brake dust, ozone, and something organic and wrong. The ticket hall is visible at the bottom of the first flight, its turnstiles bent and forced.",
+      "firstVisit": "You stand at the top of the Metro Tuileries entrance and peer down into the underworld. The Guimard canopy overhead is a masterpiece of Art Nouveau ironwork, its sinuous curves designed to welcome commuters into the modern age. Now it frames a descent into something far older and darker. The stairs are littered with dropped belongings -- bags, shoes, a child's toy -- evidence of a stampede in both directions: down to escape, then up to escape what was down there. The ceramic tiles are cracked and smeared, and the smell rising from below makes your eyes water.",
+      "night": "The Metro entrance is a dark throat in the pavement, the Guimard canopy a skeletal arch against the stars. The stairs descend into absolute blackness, and the draught from below is colder at night, carrying sounds that echo up the stairwell in distorted fragments -- scraping, shuffling, the distant clang of metal on metal. Going down at night requires either great courage or great desperation.",
+      "searched": "The Metro entrance has been searched. The dropped belongings on the stairs held nothing of value."
+    },
+    "exits": {
+      "up": {
+        "roomId": "rue_de_rivoli",
+        "description": "Up the stairs back to Rue de Rivoli and daylight.",
+        "locked": false
+      },
+      "down": {
+        "roomId": "metro_tuileries_platform",
+        "description": "Down the stairs to the platform level.",
+        "locked": false
+      }
+    },
+    "items": [],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.1,
+      "types": ["crawler"],
+      "maxCount": 1
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "dim",
+    "notes": null
+  },
+  {
+    "id": "metro_tuileries_platform",
+    "name": "Metro Tuileries - Platform",
+    "zone": "underground",
+    "description": {
+      "default": "The Tuileries platform stretches in both directions, its white ceramic walls stained with water damage and darker substances. Emergency lighting flickers in intermittent bursts, each flash revealing the platform in strobing snapshots -- overturned benches, a newsstand with its magazines scattered like confetti, advertising posters for a world of holidays and perfume that will never exist again. The tracks below the platform edge are dry and silent, the third rail dead. An emergency axe hangs in its glass case on the wall, the glass already cracked. Heavy-duty batteries sit abandoned on a bench beside it.",
+      "firstVisit": "You descend to the platform and the world above disappears. Metro Tuileries is Line 1, the oldest line in Paris, and the station retains a turn-of-the-century austerity beneath its modern signage. The platform is a shock of white ceramic in your light, the tiles reflecting back at you in a clinical glare. Emergency lights stutter overhead in dying bursts. The newsstand has been ransacked but not thoroughly -- magazines and newspapers scatter the floor, their headlines screaming about a crisis that was already too late to report. An emergency axe catches your eye, and batteries sit on a bench as if waiting for you. The tunnel mouths at each end of the platform are perfectly round, perfectly dark, and perfectly terrifying.",
+      "night": "The platform exists in the same darkness regardless of the hour above, but knowing the surface is dark too makes the underground feel more complete, more total. The emergency lights have entered their death cycle, flickering once every few minutes, each flash burning a brief image into your retinas -- empty platform, scattered papers, the tunnel mouths yawning at each end. In the dark intervals between flashes, you hear movement on the tracks below the platform edge. The scrape of limbs on gravel. The click of teeth.",
+      "searched": "The platform has been stripped. The emergency axe case is empty, and the bench where the batteries sat is bare."
+    },
+    "exits": {
+      "up": {
+        "roomId": "metro_tuileries",
+        "description": "Up the stairs to the Metro entrance and the world above.",
+        "locked": false
+      },
+      "east": {
+        "roomId": "metro_tunnel_east",
+        "description": "East into the tunnel, following the dead tracks toward Louvre-Rivoli.",
+        "locked": false
+      }
+    },
+    "items": ["batteries", "emergency_axe"],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.2,
+      "types": ["crawler"],
+      "maxCount": 2
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "dark",
+    "notes": null
+  },
+  {
+    "id": "metro_tunnel_east",
+    "name": "Metro Tunnel - Tuileries to Louvre",
+    "zone": "underground",
+    "description": {
+      "default": "The metro tunnel is a perfect cylinder of darkness, its concrete-lined walls curving overhead in a claustrophobic embrace. Rails stretch ahead on wooden sleepers, the third rail's copper strip dull and dead. Cable conduits run along both walls, thick bundles of wiring draped between iron brackets. The air is thick and still, carrying the mineral smell of deep stone and the ozone ghost of vanished electricity. Water seeps through cracks in the tunnel lining, forming shallow pools between the sleepers that reflect nothing. Every sound you make -- footstep, breath, heartbeat -- echoes forward and back in diminishing repetitions.",
+      "firstVisit": "You drop from the platform onto the track bed and the tunnel swallows you. The curved walls press in from all sides, and the darkness ahead is so absolute that your light seems to weaken, as if the tunnel is absorbing it. The rails are your guide -- follow them east and you will reach Louvre-Rivoli station. The distance is perhaps three hundred metres, but down here, with the walls closing in and the silence pressing against your eardrums, it might as well be three kilometres. Water pools between the sleepers, and you have to step carefully. Something is scratched into the tunnel wall -- recent marks in the concrete, white against grey.",
+      "night": "The tunnel knows no difference between day and night, but you do, and the knowledge that the surface above is dark too removes the last psychological safety net. You are underground, in the dark, under a dead city, in the dead of night. The rails stretch ahead into nothing. The cable conduits hum with residual charge or your imagination. Water drips with clockwork regularity. And from somewhere ahead, echoing off the curved walls in a way that makes distance impossible to judge, you hear the sound of something moving toward you.",
+      "searched": "The tunnel has been searched along its length. The cable conduits and rail bed offer nothing new."
+    },
+    "exits": {
+      "west": {
+        "roomId": "metro_tuileries_platform",
+        "description": "West back to Metro Tuileries platform.",
+        "locked": false
+      },
+      "east": {
+        "roomId": "metro_louvre_rivoli",
+        "description": "East to Metro Louvre-Rivoli station.",
+        "locked": false
+      }
+    },
+    "items": [],
+    "searchItems": ["hard_hat"],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.3,
+      "types": ["shambler", "crawler"],
+      "maxCount": 2
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "dark",
+    "notes": null
+  },
+  {
+    "id": "metro_louvre_rivoli",
+    "name": "Metro Louvre-Rivoli",
+    "zone": "underground",
+    "description": {
+      "default": "Metro Louvre-Rivoli is unlike any other station in Paris. Its platform walls are lined with reproductions of the museum's treasures -- Egyptian hieroglyphics, classical statuary mounted in lit niches, archaeological fragments displayed behind glass. The emergency lighting gives the Egyptian reliefs a sepulchral glow, their carved figures of jackal-headed gods and mummified pharaohs feeling suddenly, horribly appropriate. A wrench lies on the platform beside a maintenance panel, and the southbound service corridor shows signs of recent use -- fresh scuff marks and the faint smell of living sweat.",
+      "firstVisit": "You emerge from the tunnel into Louvre-Rivoli and the station's extraordinary decoration stops you cold. The platform is a miniature museum, its walls lined with reproductions of Egyptian art -- hieroglyphics, carved reliefs, a seated pharaoh gazing across the platform with three thousand years of calm authority. In the emergency lighting, the Egyptian funerary art takes on new meaning. The jackal-headed Anubis, god of the dead, watches you from multiple panels. The dead walking above. The dead walking below. The Egyptians knew. A service corridor leads south into the maintenance tunnels, and stairs lead up to the underground mall beneath the Louvre.",
+      "night": "Louvre-Rivoli station is a tomb. The Egyptian reproductions on the walls come alive in the flickering emergency light, the carved figures seeming to shift and gesture. Anubis watches from every panel. The platform is empty and still, the tracks below a dry riverbed of rust and silence. The service corridor to the south exhales a draught of deeper, older air, and the maintenance panel beside it hangs open, its interior gutted. Whatever was down here before has moved on, or is waiting.",
+      "searched": "The station has been searched. The Egyptian art gazes down impassively on empty display cases and stripped maintenance panels."
+    },
+    "exits": {
+      "west": {
+        "roomId": "metro_tunnel_east",
+        "description": "West into the tunnel back toward Tuileries.",
+        "locked": false
+      },
+      "up": {
+        "roomId": "louvre_underground",
+        "description": "Up the stairs to the Carrousel du Louvre underground mall.",
+        "locked": false
+      },
+      "south": {
+        "roomId": "metro_tunnel_south",
+        "description": "South through the service corridor into the maintenance tunnels.",
+        "locked": false
+      }
+    },
+    "items": ["wrench"],
+    "searchItems": ["maintenance_key"],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.2,
+      "types": ["shambler"],
+      "maxCount": 2
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "dark",
+    "notes": null
+  },
+  {
+    "id": "metro_tunnel_south",
+    "name": "Metro Service Corridor",
+    "zone": "underground",
+    "description": {
+      "default": "The service corridor branches south from the station into the deeper infrastructure beneath Paris. The ceiling is lower here, pipes and conduits pressing down, and the walls are raw concrete marked with maintenance codes in faded spray paint. A heavy steel door at the far end is labeled 'ACCES CATACOMBES - PERSONNEL RATP UNIQUEMENT' and secured with a deadbolt that requires a maintenance key. A hand-drawn sewer map is tacked to a junction box on the wall, its annotations in shaky but precise handwriting. The air is noticeably colder, and a draught from beneath the locked door carries the chalky smell of old limestone.",
+      "firstVisit": "You enter the service corridor and leave the station's museum aesthetics behind. This is the working guts of the Metro -- raw concrete, exposed pipes, maintenance codes sprayed on walls in utilitarian stencils. The corridor runs south, branching at junctions marked with painted arrows, deeper into the geological layer beneath Paris. A sewer map on the wall shows the tunnel network with hand-drawn annotations. At the corridor's end, a heavy steel door blocks further progress, its label sending a chill through you that has nothing to do with the cold: 'ACCES CATACOMBES.' The catacombs. Six million dead Parisians, stacked in ossuary walls for centuries. You wonder if they are still stacked. The door is locked. You need a maintenance key.",
+      "night": "The service corridor is a concrete throat leading deeper into the earth. The pipes above drip condensation on your neck, and the painted maintenance codes on the walls look like occult symbols in your shifting light. The catacomb door at the corridor's end is a slab of cold steel, and the draught seeping beneath it is colder still, carrying a smell of dust and bone that predates the current catastrophe by centuries. The sewer map on the wall flutters in the draught, its hand-drawn tunnels like the veins of some vast buried organism.",
+      "searched": "The service corridor has been searched. The sewer map is gone, and the junction boxes hold nothing but dead wiring."
+    },
+    "exits": {
+      "north": {
+        "roomId": "metro_louvre_rivoli",
+        "description": "North back to Metro Louvre-Rivoli station.",
+        "locked": false
+      },
+      "south": {
+        "roomId": "catacomb_passage",
+        "description": "South through the heavy steel door into the catacombs. The deadbolt requires a maintenance key.",
+        "locked": true,
+        "lockRequires": "maintenance_key"
+      }
+    },
+    "items": ["sewer_map"],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.25,
+      "types": ["crawler"],
+      "maxCount": 2
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "dark",
+    "notes": null
+  },
+  {
+    "id": "catacomb_passage",
+    "name": "Catacomb Passage",
+    "zone": "underground",
+    "description": {
+      "default": "The catacombs open before you in low limestone tunnels, their walls lined with the carefully stacked remains of six million Parisians. Femurs arranged in geometric patterns. Tibias forming chevrons and crosses. Skulls placed at regular intervals like punctuation in a sentence written in bone. The ceiling is barely head-height, rough-cut limestone weeping moisture. The air is cold and absolutely still, carrying a dust that tastes of calcium and deep time. Your light catches the empty sockets of a thousand skulls, each one turned to face the passage as if watching your progress. The tunnel branches ahead, but chalk marks on the walls suggest someone has been through here before.",
+      "firstVisit": "The steel door opens onto a different world -- older, deeper, and infinitely more disturbing than the Metro above. You have entered the Empire of the Dead. The Paris catacombs stretch for three hundred kilometres beneath the city, a labyrinth of limestone tunnels converted to ossuaries when the city's cemeteries overflowed in the eighteenth century. The bones are arranged with grotesque care -- walls of femurs, arches of skulls, crosses and patterns built from human remains. A carved stone lintel above the first arch reads the famous inscription. The tunnels branch and re-branch ahead. Without chalk marks or a map, you could wander here forever. Some of the skulls look newer than others.",
+      "night": "Day and night are meaningless here, hundreds of metres below the surface, but the catacombs feel colder after dark, as if the bones themselves register the turning of the earth above. Your light creates a moving pool of visibility in a universe of bone and stone, and the skulls in the walls seem to turn their hollow gaze to follow you. The silence is so profound that your heartbeat sounds like footsteps, and footsteps sound like heartbeats, and you begin to lose track of which is which. Something moves in the passage behind you. You hear it clearly. Bone scraping on stone.",
+      "searched": "The catacomb passage has been explored. The bones remain in their ancient arrangement, and the chalk marks are your own."
+    },
+    "exits": {
+      "north": {
+        "roomId": "metro_tunnel_south",
+        "description": "North back through the steel door to the Metro service corridor.",
+        "locked": false
+      },
+      "south": {
+        "roomId": "catacomb_exit",
+        "description": "South deeper through the ossuary tunnels toward a faint draught of fresh air.",
+        "locked": false
+      }
+    },
+    "items": [],
+    "searchItems": ["chalk"],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.4,
+      "types": ["crawler", "shambler"],
+      "maxCount": 3
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "dark",
+    "notes": null
+  },
+  {
+    "id": "catacomb_exit",
+    "name": "Catacomb Exit",
+    "zone": "underground",
+    "description": {
+      "default": "The catacomb tunnel widens and the bone walls give way to rough-cut limestone as the passage angles upward. The air changes -- the dead mineral stillness of the catacombs yields to something fresher, carrying the scent of earth and rain and living vegetation. A faint grey light filters down from above, growing stronger with each step. The ceiling cracks and crumbles where roots have pushed through from the surface, and you can hear birdsong, impossibly sweet after the silence of the tunnels. The passage ends in a steep climb toward a rusted iron grate, beyond which daylight and green leaves are visible.",
+      "firstVisit": "You have been underground so long that the first touch of fresh air nearly brings you to your knees. The catacomb tunnel has been climbing for the last hundred metres, the walls transitioning from stacked bone to raw limestone to earth reinforced with old timber. Roots dangle from the ceiling. The light ahead is grey-green and natural, filtered through vegetation. You hear birds. Actual birds, singing as if the world has not ended. The passage ends in a steep scramble toward an old iron grate set into the earth above, and through its bars you can see grass, trees, sky. The countryside. You are at the edge of Paris, or beyond it. Freedom is a rusted grate and a hard climb away.",
+      "night": "Even at night, the catacomb exit is different from the tunnels behind you. The air moves. Stars are visible through the iron grate above. The birdsong is replaced by the chirp of insects and the rustle of wind in leaves -- sounds so normal they feel alien after the dead city and the bone corridors. The grey light through the grate is moonlight, and it seems as bright as a spotlight after the absolute dark below. The climb to the surface is steep but short. Whatever waits above, it is not Paris. That, at least, is something.",
+      "searched": "The catacomb exit has been searched. The passage holds nothing but limestone, roots, and the promise of the surface above."
+    },
+    "exits": {
+      "north": {
+        "roomId": "catacomb_passage",
+        "description": "North back into the catacombs and the bone-lined tunnels.",
+        "locked": false
+      }
+    },
+    "items": [],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.3,
+      "types": ["shambler"],
+      "maxCount": 2
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "dark",
+    "notes": "Daylight filters in from above. You can smell fresh air. Freedom is close."
+  },
+  {
+    "id": "sewer_entrance",
+    "name": "Sewer Entrance",
+    "zone": "underground",
+    "description": {
+      "default": "The storm drain opens at river level into the Paris sewer system, a vaulted brick tunnel wide enough to walk upright. The smell is overpowering -- centuries of accumulated filth, softened only slightly by the river water that laps at the entrance. A narrow walkway runs along one wall above the central channel, where dark water flows sluggishly toward the Seine. The brickwork is nineteenth-century, Victor Hugo's sewers made real, each course precisely laid. A pair of waterproof waders hangs from a maintenance hook on the wall, left by a municipal worker who will not be coming back.",
+      "firstVisit": "You squeeze through the storm drain grate and enter the legendary Paris sewers. Victor Hugo sent Jean Valjean through these tunnels, and the Resistance used them during the Occupation. Now they serve a new kind of fugitive. The vaulted brick ceiling is surprisingly high, the engineering impressive even in this context. A raised walkway keeps you above the central flow, where dark water carries things you try not to identify. The smell is a physical force, but it fades to background after the first few minutes. Waders hang from a maintenance hook -- practical footwear for this environment. The tunnel connects to the Metro system deeper in.",
+      "night": "The sewer entrance is a black mouth at river level, exhaling warm, foul air into the cold night. Inside, the vaulted brick tunnel is absolute darkness, your light the only thing between you and the void. The water in the central channel sounds louder at night, its flow amplified by the brick acoustics into something that sounds almost like breathing. The walkway is slick with condensation and organic slime. Rats watch you from ledges in the brickwork, their eyes red pinpoints in your light. From deeper in the tunnel, something splashes with more force than a rat could muster.",
+      "searched": "The sewer entrance has been searched. The maintenance hooks are empty, and the walkway holds nothing but slime."
+    },
+    "exits": {
+      "up": {
+        "roomId": "quai_des_tuileries",
+        "description": "Up through the storm drain grate to the river embankment.",
+        "locked": false
+      },
+      "east": {
+        "roomId": "metro_tunnel_south",
+        "description": "East through connecting tunnels to the Metro service corridors.",
+        "locked": false
+      }
+    },
+    "items": ["waders"],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.2,
+      "types": ["crawler"],
+      "maxCount": 2
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "dark",
+    "notes": null
+  },
+  {
+    "id": "palais_royal_metro",
+    "name": "Metro Palais Royal - Musee du Louvre",
+    "zone": "underground",
+    "description": {
+      "default": "The Palais Royal Metro station serves Lines 1 and 7, its platforms connected by a labyrinth of tiled corridors and escalators frozen mid-step. The station's distinctive aluminium kiosk entrance -- Jean-Michel Othoniel's crown of coloured glass beads -- is visible far above through the stairwell, its jewel-like orbs incongruously beautiful against the dark sky. Down here, the platform walls bear their standard white ceramic tiles, cracked and water-stained. A Metro map in its display case is still intact, its coloured lines showing a transit system that no longer transits. The junction of two lines means more tunnels, more directions, more darkness.",
+      "firstVisit": "You descend into Palais Royal Metro and the dual-line junction opens around you in a confusion of corridors and platforms. Lines 1 and 7 cross here, and the station is correspondingly larger than Tuileries -- more platforms, more exits, more places for things to hide. The ceramic walls are standard Metro white, institutional and stark. A Metro map in its display case shows the complete network, several stations circled in red marker by someone who was planning routes underground. The escalators are frozen staircases now, their rubber handrails dusty and still. Othoniel's bead crown is visible far above, a reminder that beauty once mattered.",
+      "night": "The Palais Royal Metro station is a crossroads of darkness. Two lines meet here, and the platforms stretch in four directions, each one a corridor of shadow that might hold anything. The frozen escalators are steep descents into deeper black. The Metro map glows faintly in the residual emergency light, its coloured lines a schematic of a world that once moved billions of people and now moves nothing but the dead. The glass bead crown far above catches starlight in brief, coloured flashes -- green, amber, blue -- signals from a forgotten language of beauty.",
+      "searched": "The station has been searched through its corridors and platforms. The Metro map is gone, and the display cases are empty."
+    },
+    "exits": {
+      "up": {
+        "roomId": "palais_royal",
+        "description": "Up the stairs to the Palais Royal garden.",
+        "locked": false
+      }
+    },
+    "items": ["metro_map"],
+    "searchItems": [],
+    "searched": false,
+    "zombies": {
+      "spawnChance": 0.15,
+      "types": ["crawler"],
+      "maxCount": 1
+    },
+    "barricadeable": false,
+    "barricaded": false,
+    "lightLevel": "dark",
+    "notes": null
+  }
+]

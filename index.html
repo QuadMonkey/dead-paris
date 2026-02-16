@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!-- DEAD PARIS — A post-apocalyptic text adventure. Made by QuadMonkey 2026. -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="QuadMonkey">
+    <meta name="description" content="Dead Paris — A post-apocalyptic text adventure. Made by QuadMonkey 2026.">
+    <title>DEAD PARIS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Header -->
+        <header id="game-header">
+            <div id="header-left">
+                <h1 id="game-title">DEAD PARIS</h1>
+                <span id="header-subtitle">Le Meurice Hotel, Paris</span>
+            </div>
+            <div id="header-right">
+                <button id="help-btn" title="How to play"><span class="help-btn-icon">?</span> Help</button>
+            </div>
+        </header>
+
+        <!-- Stats Bar -->
+        <div id="stats-bar">
+            <div class="stat-group">
+                <div class="stat-badge" id="stat-health">
+                    <span class="stat-icon">&#9829;</span>
+                    <span class="stat-label">HP</span>
+                    <span class="stat-value" id="stat-health-val">100</span>
+                </div>
+                <div class="stat-badge" id="stat-hunger">
+                    <span class="stat-icon">&#9733;</span>
+                    <span class="stat-label">Hunger</span>
+                    <span class="stat-value" id="stat-hunger-val">0</span>
+                </div>
+                <div class="stat-badge" id="stat-thirst">
+                    <span class="stat-icon">&#9676;</span>
+                    <span class="stat-label">Thirst</span>
+                    <span class="stat-value" id="stat-thirst-val">0</span>
+                </div>
+            </div>
+            <div class="stat-group">
+                <div class="stat-badge" id="stat-day">
+                    <span class="stat-icon">&#9788;</span>
+                    <span class="stat-label">Day</span>
+                    <span class="stat-value" id="stat-day-val">1 / 30</span>
+                </div>
+                <div class="stat-badge" id="stat-time">
+                    <span class="stat-icon">&#9202;</span>
+                    <span class="stat-label">Time</span>
+                    <span class="stat-value" id="stat-time-val">06:00</span>
+                </div>
+                <div class="stat-badge location-badge" id="stat-location">
+                    <span class="stat-icon">&#9673;</span>
+                    <span class="stat-value" id="stat-location-val">Room 302</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content: Output + Inventory -->
+        <div id="main-content">
+            <div id="output-area"></div>
+            <div id="inventory-panel">
+                <div class="inv-header">Inventory</div>
+                <div id="inv-equip-slots">
+                    <div class="inv-slot" id="inv-weapon-slot">
+                        <span class="inv-slot-label">Weapon</span>
+                        <span class="inv-slot-value" id="inv-weapon-name">&mdash;</span>
+                    </div>
+                    <div class="inv-slot" id="inv-armor-slot">
+                        <span class="inv-slot-label">Armor</span>
+                        <span class="inv-slot-value" id="inv-armor-name">&mdash;</span>
+                    </div>
+                </div>
+                <div id="inv-items"></div>
+                <div id="inv-weight">
+                    <div id="inv-weight-bar"><div id="inv-weight-fill"></div></div>
+                    <span id="inv-weight-text">0 / 20 kg</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div id="input-area">
+            <span id="prompt">&gt;</span>
+            <input type="text" id="command-input" placeholder="Type a command..." autofocus autocomplete="off" spellcheck="false" />
+        </div>
+        <div id="game-footer">QuadMonkey 2026</div>
+    </div>
+
+    <!-- Intro Modal -->
+    <div id="intro-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content intro-content">
+            <div class="intro-title">DEAD PARIS</div>
+            <div class="intro-subtitle">Le Meurice Hotel &bull; 228 Rue de Rivoli &bull; Paris, 1st Arr.</div>
+            <div class="intro-narrative">
+                <p>You open your eyes.</p>
+                <p>The ceiling is ornate &mdash; gold leaf, baroque plasterwork, a crystal chandelier hanging at an angle that isn&rsquo;t right. The bed beneath you is absurdly soft. Egyptian cotton. Thread count in the thousands.</p>
+                <p>You&rsquo;re in Room 302 of Le Meurice, one of the most expensive hotels in Paris.</p>
+                <p>You don&rsquo;t remember how long you&rsquo;ve been out. The last thing you remember is the news. The outbreak. The airports closing. Emergency broadcasts in French you couldn&rsquo;t fully understand, but the tone was universal. <em>Run. Hide. Pray.</em></p>
+                <p>Something hits the window. Then again. You look out across the Tuileries Garden and see them &mdash; dozens of figures stumbling between the chestnut trees. The fountains are red.</p>
+                <p class="intro-tagline">Paris has fallen. And you are alone.</p>
+            </div>
+            <button id="intro-begin-btn">Begin</button>
+        </div>
+    </div>
+
+    <!-- Help Modal — Dead Paris © QuadMonkey 2026 -->
+    <div id="help-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content help-modal-content">
+            <div class="modal-header">
+                <h2>How to Play</h2>
+                <button id="help-close" class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+
+                <!-- Intro -->
+                <div class="help-intro">
+                    <p>Paris is overrun. You woke up in Le Meurice hotel with no memory of how you got here. Scavenge supplies, fight the undead, and find a way out &mdash; or survive long enough for rescue.</p>
+                    <p class="help-goal"><strong>Survive 30 days</strong> or <strong>escape the city</strong> via one of four routes.</p>
+                </div>
+
+                <div class="help-divider"></div>
+
+                <!-- Survival -->
+                <div class="help-block">
+                    <h3>Staying Alive</h3>
+                    <div class="help-grid-3">
+                        <div class="help-card">
+                            <div class="help-card-title"><span class="help-card-icon">&#9829;</span> Health</div>
+                            <span>If your health drops to 0, you die. Use medicine or rest to heal.</span>
+                        </div>
+                        <div class="help-card">
+                            <div class="help-card-title"><span class="help-card-icon">&#9733;</span> Hunger</div>
+                            <span>Drains over time. Eat food to restore it. You will start to take damage below 20.</span>
+                        </div>
+                        <div class="help-card">
+                            <div class="help-card-title"><span class="help-card-icon">&#9676;</span> Thirst</div>
+                            <span>Drains faster than hunger. Drink water to restore it. You will start to take damage below 30.</span>
+                        </div>
+                    </div>
+                    <p class="help-note"><strong>&#9790; Night (21:00&ndash;06:00)</strong> is far more dangerous. Zombies are more active and encounters are deadlier.</p>
+                </div>
+
+                <div class="help-divider"></div>
+
+                <!-- Commands -->
+                <div class="help-block">
+                    <h3>Commands</h3>
+                    <div class="help-cmd-grid">
+                        <div class="help-cmd-group">
+                            <h4>Movement</h4>
+                            <div class="help-cmd-row"><span class="cmd">n</span> move north</div>
+                            <div class="help-cmd-row"><span class="cmd">s</span> move south</div>
+                            <div class="help-cmd-row"><span class="cmd">e</span> move east</div>
+                            <div class="help-cmd-row"><span class="cmd">w</span> move west</div>
+                            <div class="help-cmd-row"><span class="cmd">u</span> go upstairs</div>
+                            <div class="help-cmd-row"><span class="cmd">d</span> go downstairs</div>
+                        </div>
+                        <div class="help-cmd-group">
+                            <h4>Exploration</h4>
+                            <div class="help-cmd-row"><span class="cmd">look</span> examine room or item</div>
+                            <div class="help-cmd-row"><span class="cmd">search</span> find hidden items</div>
+                            <div class="help-cmd-row"><span class="cmd">take [item]</span> pick up <em>(commas for multiple)</em></div>
+                            <div class="help-cmd-row"><span class="cmd">drop [item]</span> put down</div>
+                            <div class="help-cmd-row"><span class="cmd">use [item]</span> eat, drink, or apply</div>
+                            <div class="help-cmd-row"><span class="cmd">equip [item]</span> wield or wear</div>
+                            <div class="help-cmd-row"><span class="cmd">inventory</span> check bag <em>(or <span class="cmd">i</span>)</em></div>
+                        </div>
+                        <div class="help-cmd-group">
+                            <h4>People</h4>
+                            <div class="help-cmd-row"><span class="cmd">talk [person]</span> start conversation</div>
+                            <div class="help-cmd-row"><span class="cmd">trade [person]</span> barter items</div>
+                            <div class="help-cmd-row"><span class="cmd">give [item] to [person]</span></div>
+                        </div>
+                        <div class="help-cmd-group">
+                            <h4>Combat</h4>
+                            <div class="help-cmd-row"><span class="cmd">attack</span> strike enemy</div>
+                            <div class="help-cmd-row"><span class="cmd">defend</span> halve incoming damage</div>
+                            <div class="help-cmd-row"><span class="cmd">flee</span> attempt escape</div>
+                        </div>
+                        <div class="help-cmd-group">
+                            <h4>World</h4>
+                            <div class="help-cmd-row"><span class="cmd">unlock [dir]</span> open locked exit</div>
+                            <div class="help-cmd-row"><span class="cmd">barricade</span> fortify room (2 planks)</div>
+                            <div class="help-cmd-row"><span class="cmd">map</span> view area (needs map item)</div>
+                        </div>
+                        <div class="help-cmd-group">
+                            <h4>System</h4>
+                            <div class="help-cmd-row"><span class="cmd">save [1-3]</span> save your game</div>
+                            <div class="help-cmd-row"><span class="cmd">load [1-3]</span> load a save</div>
+                            <div class="help-cmd-row"><span class="cmd">rest</span> / <span class="cmd">sleep</span> pass time &amp; heal</div>
+                            <div class="help-cmd-row"><span class="cmd">status</span> stats &amp; escape progress</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="help-divider"></div>
+
+                <!-- Escape Routes -->
+                <div class="help-block">
+                    <h3>Escape Routes</h3>
+                    <div class="help-routes">
+                        <div class="help-route"><strong>&#9978; Seine Boat</strong> <span>Repair a motorboat at Port de Solferino</span></div>
+                        <div class="help-route"><strong>&#9992; CDG Airport</strong> <span>Drive north with fuel and a working radio</span></div>
+                        <div class="help-route"><strong>&#9963; Catacombs</strong> <span>Navigate underground tunnels south out of the city</span></div>
+                        <div class="help-route"><strong>&#9738; Helicopter</strong> <span>Signal military extraction from the hotel rooftop</span></div>
+                    </div>
+                </div>
+
+                <div class="help-divider"></div>
+
+                <!-- Tips -->
+                <div class="help-block help-tips-block">
+                    <h3>Tips</h3>
+                    <ul>
+                        <li>Explore the hotel thoroughly before venturing outside.</li>
+                        <li>The crowbar in the wine cellar opens the hotel entrance.</li>
+                        <li>Talk to every survivor &mdash; they hold escape route clues.</li>
+                        <li>Save often. Death is permanent.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

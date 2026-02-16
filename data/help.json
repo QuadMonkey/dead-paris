@@ -1,0 +1,56 @@
+{
+    "commands": {
+        "movement": [
+            "go [direction] - Move in a direction (north, south, east, west)",
+            "n / s / e / w - Shortcut directions",
+            "u / d - Go upstairs/downstairs",
+            "go [location] - Move toward a named location"
+        ],
+        "actions": [
+            "look (l) - Examine your surroundings",
+            "look [item] - Examine a specific item or person",
+            "search - Search the area for hidden items",
+            "take [item] - Pick up an item",
+            "drop [item] - Drop an item from your inventory",
+            "use [item] - Use, eat, or drink an item",
+            "equip [weapon/armor] - Equip a weapon or wear armor",
+            "unequip [item] - Remove equipped gear",
+            "inventory (i) - View what you're carrying"
+        ],
+        "interaction": [
+            "talk [person] - Start a conversation",
+            "trade [person] - Trade with a survivor",
+            "give [item] to [person] - Give an item to someone",
+            "unlock [direction] - Unlock a locked exit",
+            "barricade - Fortify the current location (needs 2 wooden planks)"
+        ],
+        "combat": [
+            "attack - Strike the enemy with your equipped weapon",
+            "defend - Reduce incoming damage for one turn",
+            "flee - Attempt to escape combat",
+            "use [item] - Use an item during combat (medicine, etc.)"
+        ],
+        "survival": [
+            "wait [hours] - Pass time (1-12 hours)",
+            "rest / sleep - Rest and heal (safer in barricaded areas)",
+            "status - View your stats, day, and escape route progress"
+        ],
+        "system": [
+            "save [1-3] - Save your game to a slot",
+            "load [1-3] - Load a saved game",
+            "help (h) - Show available commands",
+            "map - View nearby locations (requires a map item)"
+        ]
+    },
+    "tips": [
+        "Explore the hotel thoroughly before venturing outside.",
+        "Always equip a weapon before leaving safe areas.",
+        "Night time is dangerous - zombies are more active after dark.",
+        "Search rooms to find hidden items.",
+        "Talk to every survivor you meet - they have vital information.",
+        "Keep your hunger and thirst under control. Thirst kills faster than hunger.",
+        "Barricade safe rooms to rest without interruption.",
+        "There are 4 escape routes out of Paris. Explore to discover them.",
+        "Save often. Death is permanent."
+    ]
+}

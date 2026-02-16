@@ -1,0 +1,316 @@
+[
+    {
+        "id": "marcel",
+        "name": "Marcel Dubois",
+        "location": "musee_dorsay",
+        "appearsOnDay": 3,
+        "description": "A stocky man in his fifties with a security guard's uniform, now stained and torn. His eyes are sharp and suspicious, but not unkind.",
+        "presenceText": "A heavyset man watches you from behind a barricade of stacked paintings. He has a shotgun across his knees.",
+        "greeting": "A stocky man eyes you from behind a makeshift barricade of painting frames. 'You alive? Good. Been a while since I've seen someone who still blinks. I'm Marcel. Was security here before... all this.'",
+        "dialogue": {
+            "root": {
+                "text": null,
+                "options": [
+                    { "text": "What do you know about escaping Paris?", "next": "escape_info" },
+                    { "text": "Want to trade?", "next": "trade" },
+                    { "text": "What happened here?", "next": "backstory" },
+                    { "text": "Goodbye.", "next": null }
+                ]
+            },
+            "escape_info": {
+                "text": "There's a boat at Port de Solferino. Saw it myself, a few days back. Motor's dead and the hull's cracked, but if you're handy... You'd need parts. A toolbox. Fuel. It's not pretty but it floats. The Seine goes all the way to the sea, mon ami.",
+                "setsFlag": "seine_boat_discovered",
+                "options": [
+                    { "text": "Where exactly is the dock?", "next": "boat_details" },
+                    { "text": "Thanks. Want to trade?", "next": "trade" },
+                    { "text": "I'll think about it.", "next": null }
+                ]
+            },
+            "boat_details": {
+                "text": "Cross the Pont Royal or Pont des Arts to the Left Bank. Head east along the river. You'll see the Musee d'Orsay - that's where I hole up. The dock is just south of there. Can't miss the boat. It's the only one that hasn't sunk.",
+                "options": [
+                    { "text": "Thanks. Want to trade?", "next": "trade" },
+                    { "text": "I'll find it.", "next": null }
+                ]
+            },
+            "backstory": {
+                "text": "I was doing my rounds when the first ones came through the doors. Tourists, I thought. Drunk tourists. Then one of them bit Francois at the front desk and... well. I've been here ever since. The museum is solid - thick walls, heavy doors. And the art keeps me company. Monet doesn't judge.",
+                "options": [
+                    { "text": "Any way out of Paris?", "next": "escape_info" },
+                    { "text": "Want to trade?", "next": "trade" },
+                    { "text": "Stay safe.", "next": null }
+                ]
+            },
+            "trade": {
+                "text": "I've got some supplies. Nothing's free anymore, though. What have you got?",
+                "startsTrade": true,
+                "options": []
+            }
+        },
+        "tradeInventory": [
+            { "give": "canned_food", "giveQty": 2, "want": "pistol_ammo", "wantQty": 3 },
+            { "give": "bottled_water", "giveQty": 2, "want": "antibiotics", "wantQty": 1 },
+            { "give": "boat_engine_part", "giveQty": 1, "want": "kevlar_vest", "wantQty": 1 }
+        ],
+        "recruitable": false
+    },
+    {
+        "id": "claire",
+        "name": "Claire Fontaine",
+        "location": "eglise_saint_roch",
+        "appearsOnDay": 2,
+        "description": "A young woman in her mid-twenties with dark hair pulled back in a practical ponytail. Her hands are steady despite everything. A veterinary student's textbook pokes out of her bag.",
+        "presenceText": "A young woman sits in the pews, organizing medical supplies by candlelight. She looks up as you approach.",
+        "greeting": "'Don't move suddenly - I almost threw this scalpel at you.' She relaxes slightly. 'Sorry. I'm Claire. Vet student. Well, was. Now I'm... whatever you'd call someone who patches up survivors with animal medicine and prayers.'",
+        "dialogue": {
+            "root": {
+                "text": null,
+                "options": [
+                    { "text": "Could you come with me?", "next": "recruit" },
+                    { "text": "Do you know a way out?", "next": "escape_info" },
+                    { "text": "What do you know about the underground?", "next": "catacombs" },
+                    { "text": "Goodbye.", "next": null }
+                ]
+            },
+            "recruit": {
+                "text": "Travel with you? Through... that?' She gestures toward the door and the world beyond. She's quiet for a long moment. 'Okay. I can't stay here forever. The candles are running out and so am I. But I'm not a fighter - I'm a healer. I can patch you up better than you can patch yourself. Deal?'",
+                "setsFlag": "claire_recruited",
+                "recruits": true,
+                "options": [
+                    { "text": "Deal. Welcome aboard.", "next": "recruited_response" },
+                    { "text": "Let me think about it.", "next": null }
+                ]
+            },
+            "recruited_response": {
+                "text": "'Right then. Let's try not to die.' She gathers her supplies and stands. 'Lead the way. And if I say duck, you duck.'",
+                "options": []
+            },
+            "escape_info": {
+                "text": "I've heard things. One of the survivors who came through here - old man, smelled like a sewer - he talked about the tunnels under Paris. The catacombs. Said there's a way out through the metro system, down through the old tunnels, all the way south. Past the walls. He comes to Palais-Royal at night, if you want to find him.",
+                "setsFlag": "catacombs_discovered",
+                "options": [
+                    { "text": "Tell me more about the catacombs.", "next": "catacombs" },
+                    { "text": "Could you come with me?", "next": "recruit" },
+                    { "text": "Thanks.", "next": null }
+                ]
+            },
+            "catacombs": {
+                "text": "The catacombs run under the whole city - hundreds of kilometers of tunnels. Bones stacked floor to ceiling. The old man says you can reach them through the metro service tunnels. You'd need a flashlight, good boots for the water, and a map. He has a map. Find him at Palais-Royal after dark.",
+                "setsFlag": "catacombs_discovered",
+                "options": [
+                    { "text": "Who is this old man?", "next": "old_jean_info" },
+                    { "text": "Could you come with me?", "next": "recruit" },
+                    { "text": "I'll look into it.", "next": null }
+                ]
+            },
+            "old_jean_info": {
+                "text": "Calls himself Jean. He was a cataphile - one of those people who explored the tunnels illegally before all this. Now it's the only advantage he has. He's half-mad but he knows those tunnels like the back of his hand. He only comes out at night. Says the zombies don't go underground. He's wrong about that, but there are fewer down there.",
+                "options": [
+                    { "text": "Thanks for the info.", "next": null }
+                ]
+            }
+        },
+        "tradeInventory": [],
+        "recruitable": true,
+        "companionBonus": {
+            "type": "healing",
+            "bonus": 10,
+            "description": "Claire's medical knowledge grants +10 HP when using medicine."
+        }
+    },
+    {
+        "id": "sergent_moreau",
+        "name": "Sergent Moreau",
+        "location": "commissariat_1er",
+        "appearsOnDay": 5,
+        "description": "A police sergeant in his forties, leg bandaged with torn uniform fabric. His face is pale but his jaw is set. The badge on his chest reads 'MOREAU'. A service pistol sits on the desk beside him.",
+        "presenceText": "A wounded police officer is slumped behind a desk, one leg crudely bandaged. He watches you enter with wary eyes and a hand on his pistol.",
+        "greeting": "'Halt.' The word is pure reflex. He winces and shifts his wounded leg. 'Sorry. Force of habit. Sergent Moreau, Police Nationale. Or what's left of it. If you've got antibiotics, I've got information. And keys.'",
+        "dialogue": {
+            "root": {
+                "text": null,
+                "options": [
+                    { "text": "I have antibiotics.", "next": "give_antibiotics", "requires": "antibiotics" },
+                    { "text": "What do you know?", "next": "info_locked" },
+                    { "text": "What happened to the police?", "next": "backstory" },
+                    { "text": "Goodbye.", "next": null }
+                ]
+            },
+            "info_locked": {
+                "text": "I know plenty. But this leg's infected and I need antibiotics before the fever takes me. Bring me antibiotics and I'll tell you everything - escape routes, radio frequencies, car keys. The works.",
+                "options": [
+                    { "text": "I'll find some.", "next": null },
+                    { "text": "What happened to the police?", "next": "backstory" }
+                ]
+            },
+            "give_antibiotics": {
+                "text": "He takes the antibiotics with shaking hands and swallows two immediately. 'God. Thank you. Give those a few hours...' He straightens up. 'Right. A deal's a deal.'",
+                "consumesItem": "antibiotics",
+                "setsFlag": "moreau_healed",
+                "options": [
+                    { "text": "Tell me about escape routes.", "next": "escape_routes" },
+                    { "text": "You mentioned car keys?", "next": "car_keys" },
+                    { "text": "What about radio frequencies?", "next": "radio_info" }
+                ]
+            },
+            "backstory": {
+                "text": "We held the line at Place de la Concorde for two days. Two days of shooting things that wouldn't stay down. Then the horde came from the east - thousands of them. The line broke. Most of my people... didn't make it. I took a bite - just a graze, but it got infected. Normal infected, not the zombie kind. At least I hope.",
+                "options": [
+                    { "text": "I have antibiotics for that.", "next": "give_antibiotics", "requires": "antibiotics" },
+                    { "text": "Sorry to hear that.", "next": null }
+                ]
+            },
+            "escape_routes": {
+                "text": "Before comms went down, we heard CDG airport was still operating military evac flights. Frequency 121.5 MHz. You'd need a working radio to contact them and a vehicle to get there - it's 25 kilometers. There's a patrol car in the back lot. Keys are in my desk. You'd also need fuel - check the cars on the Champs-Elysees.",
+                "setsFlag": "airport_discovered",
+                "options": [
+                    { "text": "How do I build a radio?", "next": "radio_info" },
+                    { "text": "Can I have the car keys?", "next": "car_keys" },
+                    { "text": "Thanks, Sergent.", "next": null }
+                ]
+            },
+            "radio_info": {
+                "text": "You need a military radio. Parts are scattered - I know there were communication components left at Place Vendome when we pulled out. The hotel rooftops might have antenna parts too. Combine them with some decent batteries and you've got a radio. There's a manual in my desk - take it. Frequency 121.5 is military emergency.",
+                "setsFlag": "helicopter_discovered",
+                "givesItem": "radio_manual",
+                "options": [
+                    { "text": "Can I have the car keys too?", "next": "car_keys" },
+                    { "text": "Thanks.", "next": null }
+                ]
+            },
+            "car_keys": {
+                "text": "He opens a desk drawer and tosses you a set of keys with a Peugeot fob. 'Peugeot 308 in the back lot. Should still have half a tank. Get to CDG, get on a plane, get out. And if you see any of my people... tell them Moreau is still holding the station.'",
+                "givesItem": "car_keys",
+                "setsFlag": "has_car_keys",
+                "options": [
+                    { "text": "I will. Thank you.", "next": null }
+                ]
+            }
+        },
+        "tradeInventory": [],
+        "recruitable": false
+    },
+    {
+        "id": "old_jean",
+        "name": "Old Jean",
+        "location": "palais_royal",
+        "appearsOnDay": 7,
+        "nightOnly": true,
+        "description": "An elderly man with wild white hair and clothes caked in mud and chalk dust. He smells of damp stone and something older. His eyes gleam with a feverish knowledge.",
+        "presenceText": "An old man sits among Buren's columns like a ghost, chalk dust on his fingers, muttering about tunnels.",
+        "greeting": "'Shhhh.' The old man holds a finger to his lips. His eyes are wild but focused. 'They don't come down there, you know. Not many of them. The dead don't like the deeper dark. But I do. I am Jean. I have walked every tunnel under this city. Every catacomb. Every forgotten passage. You want to leave? I know the way. Down.'",
+        "dialogue": {
+            "root": {
+                "text": null,
+                "options": [
+                    { "text": "Tell me about the tunnels.", "next": "tunnels" },
+                    { "text": "Can you give me a map?", "next": "map" },
+                    { "text": "Will you guide me?", "next": "guide" },
+                    { "text": "You seem... interesting.", "next": "backstory" }
+                ]
+            },
+            "tunnels": {
+                "text": "'The Metro. The sewers. The catacombs. They're all connected, if you know where to look. Tuileries station, Line 1 - go down, go east to Louvre-Rivoli, then south through the service tunnel. There's a door - you'll need the maintenance key. Beyond that... the bones begin. Follow the chalk marks - I leave them. They'll guide you south, under the walls, to the exit. Takes two days underground. Maybe three.'",
+                "setsFlag": "catacombs_discovered",
+                "options": [
+                    { "text": "What do I need?", "next": "requirements" },
+                    { "text": "Can you give me a map?", "next": "map" },
+                    { "text": "Thanks, Jean.", "next": null }
+                ]
+            },
+            "requirements": {
+                "text": "'Light. You need light - a flashlight, good batteries. The dark down there is... absolute. Waders or good boots - the sewers have standing water. And chalk. Always chalk. To mark your way. Lose your path in the catacombs and you join the bones. I have chalk. Take it.' He pulls a piece of chalk from his pocket.",
+                "givesItem": "chalk",
+                "options": [
+                    { "text": "And a map?", "next": "map" },
+                    { "text": "Thank you.", "next": null }
+                ]
+            },
+            "map": {
+                "text": "He produces a crumpled, hand-drawn map on yellowed paper. It shows a maze of tunnels, annotated in shaky handwriting. Some passages are marked with skulls. One path is traced in red ink, leading south. 'Follow the red line. Don't take the tunnels with skulls. Trust me on that.'",
+                "givesItem": "sewer_map",
+                "setsFlag": "has_sewer_map",
+                "options": [
+                    { "text": "Will you come with me?", "next": "guide" },
+                    { "text": "Thank you, Jean.", "next": null }
+                ]
+            },
+            "guide": {
+                "text": "'Me? Down there again? Non, non. I have been too many times. The tunnels have taken enough from me. My legs, my mind, my wife - she went in and didn't come out. I stay here now, between the columns. But the map will guide you. Follow the red line. And when you reach the skulls... go faster.'",
+                "options": [
+                    { "text": "I'm sorry about your wife.", "next": "wife" },
+                    { "text": "I understand. Thank you.", "next": null }
+                ]
+            },
+            "wife": {
+                "text": "He's quiet for a long time. 'Marie. She was braver than me. Always was.' He wipes his eyes with chalk-dusty fingers. 'Go now. Before dawn. The dead wake with the sun.'",
+                "options": [
+                    { "text": "Goodbye, Jean.", "next": null }
+                ]
+            },
+            "backstory": {
+                "text": "'Interesting? Ha! Insane, they said. For forty years I explored what's beneath this city. While they drank wine and ate cheese above, I walked with the bones below. Now they're all dead and I'm still here. Who's insane now, eh?' He cackles, then coughs. 'The tunnels saved me. They'll save you too. If you're brave enough.'",
+                "options": [
+                    { "text": "Tell me about the tunnels.", "next": "tunnels" },
+                    { "text": "Can you give me a map?", "next": "map" }
+                ]
+            }
+        },
+        "tradeInventory": [],
+        "recruitable": false
+    },
+    {
+        "id": "yuki",
+        "name": "Yuki Tanaka",
+        "location": "louvre_underground",
+        "appearsOnDay": 4,
+        "description": "A Japanese woman in her early thirties, lean and alert. She holds a bamboo kendo sword with the easy grip of long practice. A travel backpack sits beside her, covered in stickers from around the world.",
+        "presenceText": "A woman in a black jacket practices sword forms between the pillars, her bamboo sword cutting the air with precise, controlled swings.",
+        "greeting": "'Ah!' She spins, sword raised, then lowers it. 'Sorry, sorry. Reflexes.' She bows slightly. 'I'm Yuki. I was visiting the Louvre when... well.' She gestures at the darkness. 'I've been practicing down here. The acoustics are good for kendo. And the zombies don't like the sound. Much.'",
+        "dialogue": {
+            "root": {
+                "text": null,
+                "options": [
+                    { "text": "Will you come with me?", "next": "recruit" },
+                    { "text": "You can fight?", "next": "fighting" },
+                    { "text": "Have you seen anything useful down here?", "next": "louvre_info" },
+                    { "text": "Goodbye.", "next": null }
+                ]
+            },
+            "recruit": {
+                "text": "'You want me to come with you? Up there?' She looks toward the stairs. 'I've been hiding down here for days. Eating vending machine food and practicing kata. It's... not sustainable.' She tightens her grip on the shinai. 'Yes. I'll come. Two is better than one. And I'm tired of talking to Mona Lisa.'",
+                "setsFlag": "yuki_recruited",
+                "recruits": true,
+                "options": [
+                    { "text": "Welcome to the team.", "next": "recruited_response" },
+                    { "text": "Let me think about it.", "next": null }
+                ]
+            },
+            "recruited_response": {
+                "text": "'Yosha!' She pumps her fist, then composes herself. 'I mean... good. Let's go. I'll watch your back.' She shoulders her bag and tucks the shinai under her arm. 'Oh - if we fight, stay behind me. I trained six years. Third dan.'",
+                "options": []
+            },
+            "fighting": {
+                "text": "'Third dan in kendo. Six years of training. I competed nationally in Japan.' She does a quick demonstration - three sharp strikes at invisible opponents. 'The bamboo isn't ideal against... them. But the technique is sound. Hit the head. Don't let them grab you. Don't stop moving.'",
+                "options": [
+                    { "text": "Come with me. I need a fighter.", "next": "recruit" },
+                    { "text": "Impressive.", "next": null }
+                ]
+            },
+            "louvre_info": {
+                "text": "'There's a locked maintenance area on the metro level below this. I've heard noises from the south tunnel - could be more zombies, could be survivors. There's also supplies in some of the shops down here - food, batteries, tape. I've been rationing what I found.'",
+                "options": [
+                    { "text": "Come explore with me.", "next": "recruit" },
+                    { "text": "Thanks for the tip.", "next": null }
+                ]
+            }
+        },
+        "tradeInventory": [],
+        "recruitable": true,
+        "companionBonus": {
+            "type": "combat",
+            "bonus": 0.3,
+            "description": "Yuki's kendo skills deal 30% bonus damage in combat."
+        }
+    }
+]

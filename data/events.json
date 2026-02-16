@@ -1,0 +1,194 @@
+{
+    "scripted": [
+        {
+            "id": "first_night",
+            "day": 1,
+            "hour": 21,
+            "once": true,
+            "messages": [
+                "The sun has set on your first day in Dead Paris.",
+                "From somewhere below, you hear pounding. Fists on wood. Dozens of them.",
+                "The hotel's front barricade shudders but holds. For now.",
+                "You realize with cold certainty: when night falls, they come alive."
+            ]
+        },
+        {
+            "id": "second_dawn",
+            "day": 2,
+            "hour": 6,
+            "once": true,
+            "messages": [
+                "You survived the night. The pounding stopped around 4 AM.",
+                "Through the window, you can see the streets are quieter in daylight.",
+                "If you're going to scavenge, daytime is your best chance.",
+                "You should explore the hotel first. There might be useful supplies."
+            ]
+        },
+        {
+            "id": "radio_static",
+            "day": 5,
+            "hour": 12,
+            "once": true,
+            "flag": "has_radio_parts",
+            "messages": [
+                "A burst of static crackles from somewhere nearby.",
+                "For a moment, you think you hear a voice -- military, clipped, professional.",
+                "'...evacuation point... CDG... frequency one-two-one...'",
+                "Then silence. A radio. If you could build a working radio..."
+            ]
+        },
+        {
+            "id": "explosion",
+            "day": 7,
+            "hour": 22,
+            "once": true,
+            "messages": [
+                "BOOM.",
+                "The night sky to the north flares orange. A massive explosion.",
+                "The direction of Montmartre. Something big just went up.",
+                "The shockwave rattles the windows. Car alarms wail in the distance.",
+                "The zombie alert level has increased. They're agitated now."
+            ],
+            "effect": { "alertIncrease": 1.5 }
+        },
+        {
+            "id": "bridge_collapse",
+            "day": 10,
+            "hour": 14,
+            "once": true,
+            "messages": [
+                "A tremendous groaning sound echoes from the river.",
+                "You hear a crash that shakes the ground. Stone and steel giving way.",
+                "The Pont du Carrousel -- the bridge east of here -- has collapsed.",
+                "The crossing points are narrowing. Getting across the Seine is harder now."
+            ]
+        },
+        {
+            "id": "helicopter_sighting",
+            "day": 14,
+            "hour": 10,
+            "once": true,
+            "messages": [
+                "The unmistakable sound of rotor blades cuts through the dead air.",
+                "A military helicopter passes overhead, heading northeast toward CDG.",
+                "It's high up, fast, and doesn't slow down. But it means one thing:",
+                "The military is still out there. There might still be a way to contact them.",
+                "If only you had a working radio and a way to signal them..."
+            ]
+        },
+        {
+            "id": "horde_warning",
+            "day": 20,
+            "hour": 18,
+            "once": true,
+            "messages": [
+                "The streets are changing.",
+                "Where before you'd see a shambler here, a crawler there -- now they",
+                "move in groups. Packs. The groaning is constant, a low chorus",
+                "from every direction.",
+                "Paris is filling up with the dead. If you're going to escape, do it soon.",
+                "The zombie alert level has significantly increased."
+            ],
+            "effect": { "alertIncrease": 2.0 }
+        },
+        {
+            "id": "final_push",
+            "day": 25,
+            "hour": 6,
+            "once": true,
+            "messages": [
+                "Day 25. Five days left.",
+                "The streets below are a river of shuffling bodies. The horde has",
+                "converged on central Paris. Every road, every bridge, every alley",
+                "teems with the dead.",
+                "If you haven't found an escape route by now, survival means staying",
+                "hidden, staying quiet, and counting the hours.",
+                "Five more days. You can do this."
+            ],
+            "effect": { "alertIncrease": 2.0 }
+        }
+    ],
+    "random": [
+        {
+            "id": "distant_scream",
+            "chance": 0.08,
+            "conditions": { "timeOfDay": "night", "zone": "exterior" },
+            "messages": [
+                "A scream pierces the night. Human. Terrified. Then silence.",
+                "You can't tell where it came from. There's nothing you can do."
+            ]
+        },
+        {
+            "id": "supply_drop",
+            "chance": 0.03,
+            "conditions": { "minDay": 5, "timeOfDay": "day", "zone": "exterior" },
+            "messages": [
+                "The distant thrum of a helicopter. A parachute blooms against the sky.",
+                "A supply crate lands somewhere nearby. You should search the area."
+            ],
+            "effect": { "addItems": ["canned_food", "bottled_water", "bandages", "pistol_ammo"] }
+        },
+        {
+            "id": "rainstorm",
+            "chance": 0.05,
+            "conditions": { "zone": "exterior" },
+            "messages": [
+                "Dark clouds roll in. Rain begins to fall -- hard, cold Parisian rain.",
+                "The streets shine wet and the zombies seem sluggish. But you're getting cold.",
+                "The rain will pass in a few hours."
+            ],
+            "effect": { "hungerIncrease": 5 }
+        },
+        {
+            "id": "rats",
+            "chance": 0.08,
+            "conditions": { "zone": "underground" },
+            "messages": [
+                "A wave of rats surges past your feet, squeaking in panic.",
+                "Something behind you spooked them. Or something ahead."
+            ]
+        },
+        {
+            "id": "strange_noise",
+            "chance": 0.1,
+            "conditions": { "zone": "hotel" },
+            "messages": [
+                "A thud from somewhere above. Then scratching. Something is moving",
+                "through the hotel's upper floors."
+            ]
+        },
+        {
+            "id": "car_alarm",
+            "chance": 0.06,
+            "conditions": { "timeOfDay": "night", "zone": "exterior" },
+            "messages": [
+                "A car alarm blares to life somewhere down the street.",
+                "It wails for thirty seconds, then dies. The silence that follows",
+                "is worse. You can hear shuffling feet converging on the sound."
+            ],
+            "effect": { "alertIncrease": 0.2 }
+        },
+        {
+            "id": "beautiful_moment",
+            "chance": 0.04,
+            "conditions": { "timeOfDay": "day", "zone": "exterior" },
+            "messages": [
+                "For a moment, the horror fades. The light catches the Seine just right,",
+                "the stone buildings glow gold, and Paris is beautiful again.",
+                "Then a zombie lurches around a corner and the moment passes."
+            ]
+        },
+        {
+            "id": "graffiti",
+            "chance": 0.07,
+            "conditions": { "zone": "exterior" },
+            "variants": [
+                "Spray-painted on a wall: 'GOD LEFT PARIS'",
+                "Graffiti on a shopfront: 'THE DEAD WALK. WE RUN.'",
+                "Chalked on the pavement: 'ILS SONT PARTOUT' - They are everywhere.",
+                "Scratched into a car door: 'DAY 12. STILL ALIVE. NOT FOR LONG.'",
+                "Written in blood on a wall: 'NE DESCENDEZ PAS' - Do not go down."
+            ]
+        }
+    ]
+}
